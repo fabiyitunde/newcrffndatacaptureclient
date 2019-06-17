@@ -1,0 +1,193 @@
+<div _ngcontent-c17="" class="col-md-10">
+  <div _ngcontent-c17="" class="card">
+    <div _ngcontent-c17="" class="card-header">
+      <h4 _ngcontent-c17="" class="card-title">Individual</h4>
+      <p _ngcontent-c17="">
+        Capture Data
+      </p>
+    </div>
+    <div class="card-content">
+      <div class="card-body ">
+        <form (ngSubmit)="submit()">
+          <div class="col-md-8">
+            <ul _ngcontent-c8="" class="list-group">
+              <li _ngcontent-c8="" class="list-group-item text-left">
+                <p class="float-right ">{{ item.name }}</p>
+                <b>Name</b>
+              </li>
+              <li _ngcontent-c8="" class="list-group-item text-left">
+                <p class="float-right ">{{ item.membershipnumber }}</p>
+                <b>Membership Number</b>
+              </li>
+              <li _ngcontent-c8="" class="list-group-item text-left">
+                <p class="float-right ">{{ category.description }}</p>
+                <b>Category</b>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="media-body  gredient-blackberry"
+            style="background-color: teal; padding-top: 25px"
+          >
+            <div style="padding: 40px">
+              <div class="input-group row">
+                <label class="col-md-4 white">Title</label>
+
+                <select
+                  name="title"
+                  #title="ngModel"
+                  class="form-control col-md-2"
+                  id="title"
+                  [(ngModel)]="data.title"
+                >
+                  <option>Select Option</option>
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Dr">Dr</option>
+                  <option value="Chief">Chief</option>
+                </select>
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Email</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  name="email"
+                  #email="ngModel"
+                  [(ngModel)]="data.email"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Phone Number</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  [(ngModel)]="data.phonenumber"
+                  #phonenumber="ngModel"
+                  name="phonenumber"
+                  id="phonenumber"
+                  placeholder="Phonenumber"
+                />
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white">Identification</label>
+
+                <select
+                  name="typeofid"
+                  #typeofid="ngModel"
+                  class="form-control col-md-2"
+                  id="title"
+                  [(ngModel)]="data.typeofid"
+                >
+                  <option>Select Option</option>
+                  <option value="driver license">Drivers License</option>
+                  <option value="International Passport"
+                    >International Passport</option
+                  >
+                  <option value="National ID">National ID</option>
+                  <option value="Voters Card">Voters Card</option>
+                </select>
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>ID Number</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  name="idcardNumber"
+                  #idcardNumber="ngModel"
+                  [(ngModel)]="data.idcardnumber"
+                  id="email"
+                  placeholder="ID Number"
+                />
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>State Code</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  name="statecode"
+                  #statecode="ngModel"
+                  [(ngModel)]="data.statecode"
+                  id="statecode"
+                  placeholder="State Code"
+                />
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>LGA Code</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  name="lgacode"
+                  #lgacode="ngModel"
+                  [(ngModel)]="data.lgacode"
+                  id="lgacode"
+                  placeholder="LGA Code"
+                />
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Address</b></label
+                >
+
+                <textarea
+                  class="form-control"
+                  name="address"
+                  #address="ngModel"
+                  [(ngModel)]="data.address"
+                  id="address"
+                  placeholder="Address"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <!-- <div class="input-group row">
+            <label class="col-md-4">Category</label>
+
+            <select
+              name="category"
+              class="form-control col-md-3"
+              id="basicSelect"
+              [(ngModel)]="item.category"
+            >
+              <option>Select Option</option>
+              <option value="1">Staff</option>
+              <option value="2">Executive</option>
+              <option value="3">Company</option>
+              <option value="4">Service Provider</option>
+            </select>
+          </div> -->
+            </div>
+          </div>
+
+          <button
+            (click)="back()"
+            class="btn btn-raised btn-primary white shadow-z-1-hover"
+            style="margin-top: 20px"
+          >
+            Back
+          </button>
+          <button
+            style="margin-top: 20px"
+            type="submit"
+            class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover float-right"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

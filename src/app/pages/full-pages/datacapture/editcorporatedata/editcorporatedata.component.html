@@ -1,0 +1,247 @@
+<div _ngcontent-c17="" class="col-md-10">
+  <div _ngcontent-c17="" class="card">
+    <div _ngcontent-c17="" class="card-header">
+      <h4 _ngcontent-c17="" class="card-title">Corporate</h4>
+      <p _ngcontent-c17="">
+        Edit Data
+      </p>
+    </div>
+    <div class="card-content">
+      <div class="card-body ">
+        <form (ngSubmit)="update()">
+          <div class="col-md-8">
+            <ul _ngcontent-c8="" class="list-group">
+              <li _ngcontent-c8="" class="list-group-item text-left">
+                <p class="float-right ">{{ item.companyname }}</p>
+                <b>Company Name</b>
+              </li>
+              <li _ngcontent-c8="" class="list-group-item text-left">
+                <p class="float-right ">{{ item.membershipnumber }}</p>
+                <b>Membership Number</b>
+              </li>
+              <li _ngcontent-c8="" class="list-group-item text-left">
+                <p class="float-right ">{{ category.description }}</p>
+                <b>Category</b>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="media-body  gredient-blackberry"
+            style="background-color: teal; padding-top: 25px"
+          >
+            <div style="padding: 40px">
+              <div class="input-group row">
+                <label class="col-md-4 white">Association</label>
+
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  name="association"
+                  value="item.association"
+                  #association="ngModel"
+                  [(ngModel)]="item.association"
+                  id="association"
+                  placeholder="Association"
+                />
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Contact Person</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  value="item.association"
+                  name="contactperson"
+                  #contactperson="ngModel"
+                  [(ngModel)]="item.contactperson"
+                  id="contactperson"
+                  placeholder="Contact Person"
+                />
+              </div>
+
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Email</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  name="email"
+                  #email="ngModel"
+                  value="item.email"
+                  [(ngModel)]="item.email"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Phone Number</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  value="item.phoneNumber"
+                  [(ngModel)]="item.phonenumber"
+                  #phonenumber="ngModel"
+                  name="phonenumber"
+                  id="phonenumber"
+                  placeholder="Phonenumber"
+                />
+              </div>
+
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Date</b></label
+                ><input
+                  class="form-control ng-pristine ng-valid ng-touched col-md-5"
+                  date=""
+                  name="date"
+                  [(ngModel)]="item.operationStartDate"
+                  placeholder="date"
+                  type="date"
+                />
+              </div>
+
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Area Of Operation</b></label
+                >
+                <div class="input-group col-md-6">
+                  <div class="col-md-3 ">
+                    <input
+                      class="form-control"
+                      name="date"
+                      type="checkbox"
+                      name="isOperatingAtAirPort"
+                      [(ngModel)]="item.isOperatingAtAirPort"
+                      [checked]="item.isOperatingAtAirPort == 'true'"
+                    /><label class="form-control-label  white">Airport</label>
+                  </div>
+                  <div class="col-md-4 ">
+                    <input
+                      class="form-control"
+                      name="isOperatingAtLandBorder"
+                      type="checkbox"
+                      [(ngModel)]="item.isOperatingAtLandBorder"
+                    /><label class="form-control-label  white"
+                      >Land Border</label
+                    >
+                  </div>
+                  <div class=" col-md-4">
+                    <input
+                      class="form-control"
+                      name="isOperatingAtSeaPort"
+                      type="checkbox"
+                      [(ngModel)]="item.isOperatingAtSeaPort"
+                    /><label class="form-control-label  white">SeaPort</label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>rCNos</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  name="rCNos"
+                  #rCNos="ngModel"
+                  value="item.rCNos"
+                  [(ngModel)]="item.rCNos"
+                  id="rCNos"
+                  placeholder="rCNos"
+                />
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Website</b></label
+                >
+                <input
+                  type="text"
+                  class="form-control col-md-5"
+                  name="website"
+                  #website="ngModel"
+                  value="item.website"
+                  [(ngModel)]="item.website"
+                  id="website"
+                  placeholder="Website"
+                />
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>State Code</b></label
+                >
+                <select
+                  class=" form"
+                  id="inputGroupSelect01"
+                  name="statecode"
+                  #statecode="ngModel"
+                  [(ngModel)]="item.statecode"
+                >
+                  <option selected>{{ stateObject.description }}</option>
+                  <option
+                    *ngFor="let state of statelist"
+                    value="{{ state.code }}"
+                  >
+                    {{ state.description }}</option
+                  >
+                </select>
+              </div>
+
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Address</b></label
+                >
+
+                <textarea
+                  class="form-control"
+                  name="address"
+                  #address="ngModel"
+                  value="item.address"
+                  [(ngModel)]="item.address"
+                  id="address"
+                  placeholder="Address"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Postal Address</b></label
+                >
+
+                <textarea
+                  class="form-control"
+                  name="postaladdress"
+                  #postaladdress="ngModel"
+                  value="item.postalAddress"
+                  [(ngModel)]="item.postaladdress"
+                  id="postaladdress"
+                  placeholder="Postal Address"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <button
+            (click)="back()"
+            class="btn btn-raised btn-primary white shadow-z-1-hover"
+            style="margin-top: 20px"
+          >
+            Back
+          </button>
+          <button
+            style="margin-top: 20px"
+            type="submit"
+            class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover float-right"
+          >
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

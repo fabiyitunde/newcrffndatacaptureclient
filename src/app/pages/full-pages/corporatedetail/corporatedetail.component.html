@@ -1,0 +1,50 @@
+<div _ngcontent-c17="" class="col-md-12 col-lg-6">
+  <div _ngcontent-c17="" class="card">
+    <div _ngcontent-c17="" class="card-header">
+      <h4 _ngcontent-c17="" class="card-title">Corporate</h4>
+      <p _ngcontent-c17="">
+        Practioner Detail
+      </p>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <form (ngSubmit)="submit()">
+          <div class="input-group row">
+            <label class="col-md-4">Company Name</label>
+            <input
+              name="companyname"
+              [(ngModel)]="data.companyname"
+              value="data.companyname"
+              class="form-control col-md-8"
+              type="text"
+            />
+          </div>
+          <div class="input-group row">
+            <label class="col-md-4">Membership Number</label>
+            <input
+              [(ngModel)]="data.membershipnumber"
+              class="form-control col-md-8"
+              value="data.membershipnumber "
+              type="text"
+              name="membershipnumber"
+            />
+          </div>
+          <button
+            [disabled]="item.category == ''"
+            (click)="back()"
+            class="btn btn-raised btn-primary white shadow-z-1-hover"
+          >
+            Back
+          </button>
+
+          <button
+            type="submit"
+            class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover float-right"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

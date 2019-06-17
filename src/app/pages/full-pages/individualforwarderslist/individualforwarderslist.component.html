@@ -1,0 +1,79 @@
+<section id="filter" class="mb-3  card">
+  <div class="row text-left">
+    <div class="col-12">
+      <div _ngcontent-c8="" class="card-body ">
+        <div class="content-header">
+          Individual
+        </div>
+        <p class="card-text">Practitioners List</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <input
+        type="text"
+        style="padding:8px;margin:15px auto;width:30%; margin-left: 20px;"
+        placeholder="Type to filter the surname column..."
+        (keyup)="updateFilter($event)"
+      />
+      <input
+        type="text"
+        style="padding:8px;margin:15px auto;width:30%; margin-left: 20px;"
+        placeholder="Type to filter the membership ID column..."
+        (keyup)="membershipIDFilter($event)"
+      />
+      <ngx-datatable
+        #table
+        class="bootstrap"
+        [columns]="columns"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [limit]="10"
+        [rows]="rows"
+      >
+        <ngx-datatable-column>
+          <ng-template ngx-datatable-header-template>
+            <span>Surname</span>
+          </ng-template>
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row.surname }}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column>
+          <ng-template ngx-datatable-header-template>
+            <span>First Name</span>
+          </ng-template>
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row.firstname }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column>
+          <ng-template ngx-datatable-header-template>
+            <span>Membership Number</span>
+          </ng-template>
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row.membershipnumber }}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column>
+          <ng-template ngx-datatable-header-template>
+            <span>Detail</span>
+          </ng-template>
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button
+              class="btn btn-raised gradient-mint white shadow-z-4"
+              (click)="detail(row._id)"
+            >
+              Detail
+            </button>
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+</section>

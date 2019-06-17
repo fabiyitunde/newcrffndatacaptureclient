@@ -1,0 +1,65 @@
+<div _ngcontent-c17="" class="col-md-10">
+  <div _ngcontent-c17="" class="card">
+    <div _ngcontent-c17="" class="card-header">
+      <h4 _ngcontent-c17="" class="card-title">Update</h4>
+      <p _ngcontent-c17="">
+        Certificate Register Detail
+      </p>
+    </div>
+    <div class="card-content">
+      <div class="card-body ">
+        <form (ngSubmit)="submit()">
+          <div class="input-group row">
+            <label class="col-md-4">Name</label>
+            <input
+              name="name"
+              [(ngModel)]="item.name"
+              value="item.name"
+              class="form-control col-md-5"
+              type="text"
+            />
+          </div>
+          <div class="input-group row">
+            <label class="col-md-4">Membership Number</label>
+            <input
+              [(ngModel)]="item.membershipnumber"
+              class="form-control col-md-5"
+              value="item.membershipnumber "
+              type="text"
+              name="membershipnumber"
+            />
+          </div>
+          <div class="input-group row">
+            <label class="col-md-4">Category</label>
+
+            <select
+              name="category"
+              class="form-control col-md-3"
+              id="basicSelect"
+              [(ngModel)]="item.category"
+            >
+              <option>Select Option</option>
+              <option value="1">Staff</option>
+              <option value="2">Executive</option>
+              <option value="3">Company</option>
+              <option value="4">Service Provider</option>
+            </select>
+          </div>
+          <button
+            [disabled]="item.category == ''"
+            (click)="back()"
+            class="btn btn-raised btn-primary white shadow-z-1-hover"
+          >
+            Back
+          </button>
+          <button
+            type="submit"
+            class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover float-right"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

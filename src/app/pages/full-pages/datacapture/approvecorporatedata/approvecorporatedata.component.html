@@ -1,0 +1,78 @@
+<section>
+  <div class="card">
+    <div _ngcontent-c8="" class="card-content">
+      <div _ngcontent-c8="" class="card-body ">
+        <div class="row">
+          <div class="col-md-11">
+            <h4 _ngcontent-c8="" class="card-title">Approve</h4>
+            <p _ngcontent-c8="" class="card-text">
+              Corporate Data
+            </p>
+          </div>
+          <Button
+            class="btn btn-raised mr-1 shadow-z-2 btn-secondary "
+            (click)="back()"
+            >back</Button
+          >
+        </div>
+      </div>
+      <div class="col-md-8">
+        <ul _ngcontent-c8="" class="list-group">
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ item.companyname }}</p>
+            <b>Company Name</b>
+          </li>
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ item.membershipnumber }}</p>
+            <b>Membership Number</b>
+          </li>
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ item.rCNos }}</p>
+            <b>rCNos</b>
+          </li>
+
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ category.description }}</p>
+            <b>Category</b>
+          </li>
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ state.description }}</p>
+            <b>State</b>
+          </li>
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ item.operationStartDate }}</p>
+            <b>Opertation State Date</b>
+          </li>
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ item.email }}</p>
+            <b>Email</b>
+          </li>
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ item.website }}</p>
+            <b>Website</b>
+          </li>
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ item.association }}</p>
+            <b>Association</b>
+          </li>
+          <li _ngcontent-c8="" class="list-group-item text-left">
+            <p class="float-right ">{{ item.contactperson }}</p>
+            <b>Contact Person</b>
+          </li>
+        </ul>
+      </div>
+      <div _ngcontent-c8="" class="card-body">
+        <Button
+          class="btn btn-raised mr-1 shadow-z-2 btn-primary"
+          (click)="approve()"
+          >Approve</Button
+        >
+        <Button
+          class="btn btn-raised mr-1 shadow-z-2 btn-danger"
+          (click)="return()"
+          >Return</Button
+        >
+      </div>
+    </div>
+  </div>
+</section>

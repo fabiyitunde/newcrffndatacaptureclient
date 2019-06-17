@@ -1,0 +1,63 @@
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/catch";
+import { throwError } from "rxjs";
+import { Observable } from "rxjs/observable";
+import { Response } from "@angular/http";
+
+import { environment } from "environments/environment";
+
+@Injectable()
+export class EditCorporateDataService {
+  constructor(private http: HttpClient) {}
+
+  updaterecord(model: any) {
+    const url = `${environment.webapibaseurl}coporate/updateCorporateData`;
+    return this.http
+      .post(url, model)
+      .map((response: Response) => response)
+      .catch((error: any) => {
+        const body = error.error;
+        const errMsg = body.Message
+          ? body.Message
+          : error.status
+          ? `${error.status} - ${error.statusText}`
+          : "Server error";
+        return throwError(body);
+      });
+  }
+
+  getcorporatedatabyid(id: any) {
+    const url = `${
+      environment.webapibaseurl
+    }coporate/getCoporateDataById/${id}`;
+    return this.http
+      .get(url)
+      .map((response: any) => response)
+      .catch((error: any) => {
+        const body = error.error;
+        const errMsg = body.Message
+          ? body.Message
+          : error.status
+          ? `${error.status} - ${error.statusText}`
+          : "Server error";
+        return throwError(errMsg);
+      });
+  }
+  getstatelist() {
+    const url = `${environment.webapibaseurl}coporate/getStatesList`;
+    return this.http
+      .get(url)
+      .map((response: any) => response)
+      .catch((error: any) => {
+        const body = error.error;
+        const errMsg = body.Message
+          ? body.Message
+          : error.status
+          ? `${error.status} - ${error.statusText}`
+          : "Server error";
+        return throwError(errMsg);
+      });
+  }
+}

@@ -1,21 +1,22 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { ApproveCorporateDataService } from "./approvecorporatedata.service";
+import { ApproveIndividualDataService } from "./approveindividualdata.service";
 import { Router, ActivatedRoute } from "@angular/router";
 @Component({
-  selector: "app-approvecorporatedata",
-  templateUrl: "./approvecorporatedata.component.html",
-  styleUrls: ["./approvecorporatedata.component.scss"],
-  providers: [ApproveCorporateDataService]
+  selector: "app-approveindividualdata",
+  templateUrl: "./approveindividualdata.component.html",
+  styleUrls: ["./approveindividualdata.component.scss"],
+  providers: [ApproveIndividualDataService]
 })
-export class ApprovecorporatedataComponent implements OnInit {
+export class ApproveindividualdataComponent implements OnInit {
   recordid: any;
   data: any = {};
   item: any = {};
   category: any = {};
   state: any = {};
+  lga: any = {};
 
   constructor(
-    private service: ApproveCorporateDataService,
+    private service: ApproveIndividualDataService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -23,10 +24,11 @@ export class ApprovecorporatedataComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.recordid = params["id"];
 
-      this.service.getcorporatedata(this.recordid).subscribe(result => {
+      this.service.getindividualdata(this.recordid).subscribe(result => {
         this.item = result;
         this.category = this.item.category;
         this.state = this.item.state;
+        this.lga = result.lga;
         console.log(this.item);
       });
     });
@@ -60,10 +62,8 @@ export class ApprovecorporatedataComponent implements OnInit {
       });
     }
   }
-  edit(id: any) {
-    this.router.navigate(["pages/updatecorporatedata", id]);
-  }
+
   back() {
-    this.router.navigate(["pages/unapprovedcorporatelist"]);
+    this.router.navigate(["administrator/unapprovedindividuallist"]);
   }
 }

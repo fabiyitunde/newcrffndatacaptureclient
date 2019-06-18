@@ -29,19 +29,12 @@ import { IndividualdetailComponent } from "./individualdetail/individualdetail.c
 import { CertificateregisterlistComponent } from "./certificateregisterlist/certificateregisterlist.component";
 import { UnsubmittedcertificateregisterlistComponent } from "./unsubmittedcertificateregisterlist/unsubmittedcertificateregisterlist.component";
 import { UpdatecertificateregisterComponent } from "./updatecertificateregister/updatecertificateregister.component";
-import { UnapprovedcertificateregisterlistComponent } from "./unapprovedcertificateregisterlist/unapprovedcertificateregisterlist.component";
-import { ApprovecertificateregisterdetailComponent } from "./approvecertificateregisterdetail/approvecertificateregisterdetail.component";
-import { UnissuedcertificatelistComponent } from "./unissuedcertificatelist/unissuedcertificatelist.component";
-import { CorporateissuedcertificatelistComponent } from "./datacapture/corporateissuedcertificatelist/corporateissuedcertificatelist.component";
-import { IndividualissuedcertificatelistComponent } from "./datacapture/individualissuedcertificatelist/individualissuedcertificatelist.component";
+
 import { UpdateindividualdataComponent } from "./datacapture/updateindividualdata/updateindividualdata.component";
 import { UpdatecorporatedataComponent } from "./datacapture/updatecorporatedata/updatecorporatedata.component";
 import { SubmitindividualdataComponent } from "./datacapture/submitindividualdata/submitindividualdata.component";
 import { SubmitcorporatedataComponent } from "./datacapture/submitcorporatedata/submitcorporatedata.component";
-import { UnapprovedcorporatelistComponent } from "./datacapture/unapprovedcorporatelist/unapprovedcorporatelist.component";
-import { UnapprovedindividuallistComponent } from "./datacapture/unapprovedindividuallist/unapprovedindividuallist.component";
-import { ApproveindividualdataComponent } from "./datacapture/approveindividualdata/approveindividualdata.component";
-import { ApprovecorporatedataComponent } from "./datacapture/approvecorporatedata/approvecorporatedata.component";
+
 import { SubmitcertificateregisterdetailComponent } from "./submitcertificateregisterdetail/submitcertificateregisterdetail.component";
 import { CreatecorporatedataComponent } from "./datacapture/createcorporatedata/createcorporatedata.component";
 import { CreateindividualdataComponent } from "./datacapture/createindividualdata/createindividualdata.component";
@@ -84,19 +77,12 @@ const PAGES_COMPONENTS = [FullPagesComponent];
     CertificateregisterlistComponent,
     UnsubmittedcertificateregisterlistComponent,
     UpdatecertificateregisterComponent,
-    UnapprovedcertificateregisterlistComponent,
-    ApprovecertificateregisterdetailComponent,
-    UnissuedcertificatelistComponent,
-    CorporateissuedcertificatelistComponent,
-    IndividualissuedcertificatelistComponent,
+
     UpdateindividualdataComponent,
     UpdatecorporatedataComponent,
     SubmitindividualdataComponent,
     SubmitcorporatedataComponent,
-    UnapprovedcorporatelistComponent,
-    UnapprovedindividuallistComponent,
-    ApproveindividualdataComponent,
-    ApprovecorporatedataComponent,
+
     SubmitcertificateregisterdetailComponent,
     CreatecorporatedataComponent,
     CreateindividualdataComponent,

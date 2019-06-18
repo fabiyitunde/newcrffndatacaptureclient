@@ -28,6 +28,7 @@ import { AuthenticationService } from "./pages/services";
 import { DragulaService } from "ng2-dragula";
 import { AuthService } from "./shared/auth/auth.service";
 import { AuthGuard } from "./shared/auth/auth-guard.service";
+import { RoleGuard } from "./pages/services/role.guard";
 import { from } from "rxjs";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -67,6 +68,7 @@ export function createTranslateLoader(http: HttpClient) {
     AuthGuard,
     Auth_Guard,
     AuthenticationService,
+    RoleGuard,
 
     {
       provide: HTTP_INTERCEPTORS,

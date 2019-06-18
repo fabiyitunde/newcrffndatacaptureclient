@@ -32,7 +32,7 @@ export class UnapprovedindividuallistComponent implements OnInit {
   }
 
   approve(id: any) {
-    this.router.navigate(["pages/approveindividualdata", id]);
+    this.router.navigate(["administrator/approveindividualdata", id]);
   }
 
   updateFilter(event) {

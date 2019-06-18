@@ -15,19 +15,11 @@ import { IndividualdetailComponent } from "./individualdetail/individualdetail.c
 import { CertificateregisterlistComponent } from "./certificateregisterlist/certificateregisterlist.component";
 import { UnsubmittedcertificateregisterlistComponent } from "./unsubmittedcertificateregisterlist/unsubmittedcertificateregisterlist.component";
 import { UpdatecertificateregisterComponent } from "./updatecertificateregister/updatecertificateregister.component";
-import { UnapprovedcertificateregisterlistComponent } from "./unapprovedcertificateregisterlist/unapprovedcertificateregisterlist.component";
-import { ApprovecertificateregisterdetailComponent } from "./approvecertificateregisterdetail/approvecertificateregisterdetail.component";
-import { UnissuedcertificatelistComponent } from "./unissuedcertificatelist/unissuedcertificatelist.component";
-import { CorporateissuedcertificatelistComponent } from "./datacapture/corporateissuedcertificatelist/corporateissuedcertificatelist.component";
-import { IndividualissuedcertificatelistComponent } from "./datacapture/individualissuedcertificatelist/individualissuedcertificatelist.component";
 import { UpdateindividualdataComponent } from "./datacapture/updateindividualdata/updateindividualdata.component";
 import { UpdatecorporatedataComponent } from "./datacapture/updatecorporatedata/updatecorporatedata.component";
 import { SubmitindividualdataComponent } from "./datacapture/submitindividualdata/submitindividualdata.component";
 import { SubmitcorporatedataComponent } from "./datacapture/submitcorporatedata/submitcorporatedata.component";
-import { UnapprovedcorporatelistComponent } from "./datacapture/unapprovedcorporatelist/unapprovedcorporatelist.component";
-import { UnapprovedindividuallistComponent } from "./datacapture/unapprovedindividuallist/unapprovedindividuallist.component";
-import { ApproveindividualdataComponent } from "./datacapture/approveindividualdata/approveindividualdata.component";
-import { ApprovecorporatedataComponent } from "./datacapture/approvecorporatedata/approvecorporatedata.component";
+
 import { SubmitcertificateregisterdetailComponent } from "./submitcertificateregisterdetail/submitcertificateregisterdetail.component";
 import { CreatecorporatedataComponent } from "./datacapture/createcorporatedata/createcorporatedata.component";
 import { CreateindividualdataComponent } from "./datacapture/createindividualdata/createindividualdata.component";
@@ -88,21 +80,6 @@ const routes: Routes = [
       },
 
       {
-        path: "approvecorporatedata/:id",
-        component: ApprovecorporatedataComponent,
-        data: {
-          title: " Approve Corporate Data Page"
-        }
-      },
-
-      {
-        path: "approveindividualdata/:id",
-        component: ApproveindividualdataComponent,
-        data: {
-          title: "Approve Individual Data Page"
-        }
-      },
-      {
         path: "editindividualdata/:id",
         component: EditindividualdataComponent,
         data: {
@@ -129,21 +106,6 @@ const routes: Routes = [
         component: UnsubmittedindividualdatalistComponent,
         data: {
           title: "Unsubmitted individual data list List Page"
-        }
-      },
-      {
-        path: "unapprovedindividuallist",
-        component: UnapprovedindividuallistComponent,
-        data: {
-          title: " Unapproved Individual List Page"
-        }
-      },
-
-      {
-        path: "unapprovedcorporatelist",
-        component: UnapprovedcorporatelistComponent,
-        data: {
-          title: "Unapproved Corporate List Page"
         }
       },
 
@@ -202,47 +164,13 @@ const routes: Routes = [
       },
 
       {
-        path: "approvecertificateregisterdetail/:id",
-        component: ApprovecertificateregisterdetailComponent,
-        data: {
-          title: " Approve certificate register detail Page"
-        }
-      },
-      {
-        path: "corporateissuedcertificatelist",
-        component: CorporateissuedcertificatelistComponent,
-        data: {
-          title: "Corporate Issued certificate list Page"
-        }
-      },
-      {
-        path: "individualissuedcertificatelist",
-        component: IndividualissuedcertificatelistComponent,
-        data: {
-          title: "Individual Issued certificate list Page"
-        }
-      },
-      {
-        path: "unissuedcertificatelist",
-        component: UnissuedcertificatelistComponent,
-        data: {
-          title: "Unissued certificate list Page"
-        }
-      },
-      {
         path: "certificateregisterlist",
         component: CertificateregisterlistComponent,
         data: {
           title: "Certificateregisterlist Page"
         }
       },
-      {
-        path: "unapprovedcertificateregisterlist",
-        component: UnapprovedcertificateregisterlistComponent,
-        data: {
-          title: "Unapproved certificate register list Page"
-        }
-      },
+
       {
         path: "unsubmittedcertificateregisterlist",
         component: UnsubmittedcertificateregisterlistComponent,

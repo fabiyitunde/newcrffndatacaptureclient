@@ -44,7 +44,9 @@ export class ApprovecertificateregisterdetailComponent implements OnInit {
       console.log(this.data);
       this.service.approverecord(this.data).subscribe(result => {
         alert("Record Approved SuccessFully");
-        this.router.navigate(["pages/unapprovedcertificateregisterlist"]);
+        this.router.navigate([
+          "administrator/unapprovedcertificateregisterlist"
+        ]);
       });
     }
   }
@@ -54,7 +56,7 @@ export class ApprovecertificateregisterdetailComponent implements OnInit {
     console.log(this.data);
     this.service.returnrecord(this.data).subscribe(result => {
       alert("Record Approved SuccessFully");
-      this.router.navigate(["pages/unapprovedcertificateregisterlist"]);
+      this.router.navigate(["administrator/unapprovedcertificateregisterlist"]);
     });
   }
   edit(id: any) {

@@ -37,7 +37,10 @@ export class UnapprovedcertificateregisterlistComponent implements OnInit {
   }
 
   approve(id: any) {
-    this.router.navigate(["pages/approvecertificateregisterdetail", id]);
+    this.router.navigate([
+      "administrator/approvecertificateregisterdetail",
+      id
+    ]);
   }
 
   updateFilter(event) {

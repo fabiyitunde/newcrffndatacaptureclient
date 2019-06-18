@@ -22,6 +22,7 @@ const appRoutes: Routes = [
     children: Full_ROUTES,
     canActivate: [AuthGuard]
   },
+
   {
     path: "",
     component: ContentLayoutComponent,
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     children: CONTENT_ROUTES,
     canActivate: [AuthGuard]
   },
+
   {
     path: "**",
     redirectTo: "pages/error"

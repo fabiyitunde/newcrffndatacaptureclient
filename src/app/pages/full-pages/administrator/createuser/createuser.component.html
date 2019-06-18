@@ -1,0 +1,60 @@
+<div _ngcontent-c53="" class="row m-0">
+  <div _ngcontent-c53="" class="col-lg-6 d-none d-lg-block text-center py-3">
+    <img
+      _ngcontent-c53=""
+      alt=""
+      class="img-fluid"
+      height="230"
+      src="assets/img/gallery/forgot.png"
+      width="300"
+    />
+  </div>
+
+  <div _ngcontent-c53="" class="col-lg-6 col-md-12 bg-white px-4 pt-3">
+    <h4 _ngcontent-c53="" class="card-title mb-2">Create User</h4>
+    <p _ngcontent-c53="" class="card-text mb-3">
+      Please enter details of New User.
+    </p>
+    <form (ngSubmit)="submit()">
+      <b>Display Name</b>
+      <input
+        name="displayName"
+        #displayName="ngModel"
+        [(ngModel)]="data.displayName"
+        id="isplayName"
+        class="form-control mb-3"
+        placeholder="Display Name"
+        type="text"
+      />
+      <b>Email</b>
+      <input
+        name="email"
+        #email="ngModel"
+        [(ngModel)]="data.email"
+        id="email"
+        class="form-control mb-3"
+        placeholder="Email"
+        type="text"
+      />
+      <b>Password</b>
+      <input
+        name="password"
+        #password="ngModel"
+        [(ngModel)]="data.password"
+        id="password"
+        class="form-control mb-3"
+        placeholder=""
+        type="password"
+      />
+
+      <div _ngcontent-c53="" class="fg-actions d-flex justify-content-between">
+        <div _ngcontent-c53="" class="login-btn"></div>
+        <div _ngcontent-c53="" class="recover-pass">
+          <button class="btn btn-primary" type="submit">
+            Create
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

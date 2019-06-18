@@ -1,5 +1,6 @@
 import { Routes, RouterModule } from "@angular/router";
 import { AdministratorModule } from "../../pages/full-pages/administrator/administrator.module";
+import { FullPagesModule } from "../../pages/full-pages/full-pages.module";
 import { RoleGuard } from "../../pages/services/role.guard";
 //Route for content layout with sidebar, navbar and footer.
 
@@ -42,7 +43,7 @@ export const Full_ROUTES: Routes = [
   },
   {
     path: "pages",
-    loadChildren: "./pages/full-pages/full-pages.module#FullPagesModule"
+    loadChildren: () => FullPagesModule
   },
   {
     path: "administrator",

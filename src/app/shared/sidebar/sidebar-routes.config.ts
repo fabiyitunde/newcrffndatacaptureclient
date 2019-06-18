@@ -1,7 +1,5 @@
 import { RouteInfo } from "./sidebar.metadata";
-const userinfo = JSON.parse(localStorage.getItem("userinfo"));
-const user = userinfo.user;
-const roles = user.usertype;
+
 //Sidebar menu Routes and data
 export const ROUTES: RouteInfo[] = [
   {

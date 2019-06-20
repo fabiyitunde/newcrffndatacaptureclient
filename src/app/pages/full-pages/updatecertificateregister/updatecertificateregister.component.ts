@@ -33,7 +33,7 @@ export class UpdatecertificateregisterComponent implements OnInit {
 
   category() {
     if (this.item.category === "1") {
-      return (this.item.description = "staff");
+      return (this.item.description = "Staff");
     } else if (this.item.category === "2") {
       return (this.item.description = "Executive");
     } else if (this.item.category === "3") {
@@ -46,7 +46,8 @@ export class UpdatecertificateregisterComponent implements OnInit {
     this.category();
 
     this.data.userid = JSON.parse(localStorage.getItem("userinfo")).user.id;
-    this.data.categorycode = this.item.category;
+
+    this.data.categorycode = parseInt(this.item.category, 10);
     this.data.categorydescription = this.item.description;
     this.data.mongo_id = this.recordid;
     this.data.name = this.item.name;

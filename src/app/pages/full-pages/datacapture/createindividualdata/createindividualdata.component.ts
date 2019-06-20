@@ -58,6 +58,7 @@ export class CreateindividualdataComponent implements OnInit {
 
     this.service.saverecord(this.data).subscribe(result => {
       alert("Record Created SuccessFully");
+      this.back();
     });
   }
   back() {

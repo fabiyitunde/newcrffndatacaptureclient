@@ -10,8 +10,6 @@ import { ApproveindividualdataComponent } from "./approveindividualdata/approvei
 import { ApprovecorporatedataComponent } from "./approvecorporatedata/approvecorporatedata.component";
 import { UnapprovedcorporatelistComponent } from "./unapprovedcorporatelist/unapprovedcorporatelist.component";
 import { UnapprovedindividuallistComponent } from "./unapprovedindividuallist/unapprovedindividuallist.component";
-import { CorporateissuedcertificatelistComponent } from "./corporateissuedcertificatelist/corporateissuedcertificatelist.component";
-import { IndividualissuedcertificatelistComponent } from "./individualissuedcertificatelist/individualissuedcertificatelist.component";
 import { CreateuserComponent } from "./createuser/createuser.component";
 
 const routes: Routes = [
@@ -35,20 +33,7 @@ const routes: Routes = [
           title: "Unissued certificate list Page"
         }
       },
-      {
-        path: "corporateissuedcertificatelist",
-        component: CorporateissuedcertificatelistComponent,
-        data: {
-          title: "Corporate Issued certificate list Page"
-        }
-      },
-      {
-        path: "individualissuedcertificatelist",
-        component: IndividualissuedcertificatelistComponent,
-        data: {
-          title: "Individual Issued certificate list Page"
-        }
-      },
+
       {
         path: "unapprovedindividuallist",
         component: UnapprovedindividuallistComponent,

@@ -46,9 +46,19 @@ export const ROUTES: RouteInfo[] = [
         isExternalLink: false,
         submenu: []
       },
+      {
+        path: "/administrator/unapprovedcertificateregisterlist",
+        title: "Unapproved Certificates",
+        icon: "",
+        class: "",
+        badge: "",
+        badgeClass: "",
+        isExternalLink: false,
+        submenu: []
+      },
 
       {
-        path: "/pages/unissuedcertificatelist",
+        path: "/administrator/unissuedcertificatelist",
         title: "Unissued Certificates",
         icon: "",
         class: "",

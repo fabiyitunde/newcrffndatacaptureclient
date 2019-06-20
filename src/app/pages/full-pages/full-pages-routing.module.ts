@@ -27,6 +27,8 @@ import { UnsubmittedcorporatedatalistComponent } from "./datacapture/unsubmitted
 import { UnsubmittedindividualdatalistComponent } from "./datacapture/unsubmittedindividualdatalist/unsubmittedindividualdatalist.component";
 import { EditcorporatedataComponent } from "./datacapture/editcorporatedata/editcorporatedata.component";
 import { EditindividualdataComponent } from "./datacapture/editindividualdata/editindividualdata.component";
+import { CorporateissuedcertificatelistComponent } from "./corporateissuedcertificatelist/corporateissuedcertificatelist.component";
+import { IndividualissuedcertificatelistComponent } from "./individualissuedcertificatelist/individualissuedcertificatelist.component";
 
 import { Auth_Guard } from "../services/auth.guard";
 const routes: Routes = [
@@ -47,6 +49,20 @@ const routes: Routes = [
         component: ProcessfreightforwarderComponent,
         data: {
           title: "Process Fright Forwarder Page"
+        }
+      },
+      {
+        path: "corporateissuedcertificatelist",
+        component: CorporateissuedcertificatelistComponent,
+        data: {
+          title: "Corporate Issued certificate list Page"
+        }
+      },
+      {
+        path: "individualissuedcertificatelist",
+        component: IndividualissuedcertificatelistComponent,
+        data: {
+          title: "Individual Issued certificate list Page"
         }
       },
       {

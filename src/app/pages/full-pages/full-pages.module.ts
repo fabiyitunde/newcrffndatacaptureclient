@@ -42,6 +42,8 @@ import { UnsubmittedcorporatedatalistComponent } from "./datacapture/unsubmitted
 import { UnsubmittedindividualdatalistComponent } from "./datacapture/unsubmittedindividualdatalist/unsubmittedindividualdatalist.component";
 import { EditcorporatedataComponent } from "./datacapture/editcorporatedata/editcorporatedata.component";
 import { EditindividualdataComponent } from "./datacapture/editindividualdata/editindividualdata.component";
+import { CorporateissuedcertificatelistComponent } from "./corporateissuedcertificatelist/corporateissuedcertificatelist.component";
+import { IndividualissuedcertificatelistComponent } from "./individualissuedcertificatelist/individualissuedcertificatelist.component";
 
 const PAGES_COMPONENTS = [FullPagesComponent];
 
@@ -77,6 +79,8 @@ const PAGES_COMPONENTS = [FullPagesComponent];
     CertificateregisterlistComponent,
     UnsubmittedcertificateregisterlistComponent,
     UpdatecertificateregisterComponent,
+    CorporateissuedcertificatelistComponent,
+    IndividualissuedcertificatelistComponent,
 
     UpdateindividualdataComponent,
     UpdatecorporatedataComponent,

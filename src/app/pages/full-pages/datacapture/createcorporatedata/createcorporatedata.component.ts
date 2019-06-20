@@ -58,11 +58,11 @@ export class CreatecorporatedataComponent implements OnInit {
     this.data.category = this.item.category;
 
     this.service.saverecord(this.data).subscribe(result => {
-      alert("Record Updated SuccessFully");
+      alert("Record Created SuccessFully");
       this.back();
     });
   }
   back() {
-    this.router.navigate(["pages/corporateforwarderslist"]);
+    this.router.navigate(["pages/corporateissuedcertificatelist"]);
   }
 }

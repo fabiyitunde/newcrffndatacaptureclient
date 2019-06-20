@@ -61,6 +61,6 @@ export class CreateindividualdataComponent implements OnInit {
     });
   }
   back() {
-    this.router.navigate(["pages/individualforwarderslist"]);
+    this.router.navigate(["pages/individualissuedcertificatelist"]);
   }
 }

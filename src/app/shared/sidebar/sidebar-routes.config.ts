@@ -3,9 +3,14 @@ import { RouteInfo } from "./sidebar.metadata";
 //Sidebar menu Routes and data
 
 const userInfo = JSON.parse(localStorage.getItem("userinfo"));
-const user = userInfo.user;
+//var user = userInfo.user;
+//var user = {};
 var routes: any[] = [];
-
+if (userInfo === null) {
+  var user = { usertype: 3 };
+} else {
+  user = userInfo.user;
+}
 if (user.usertype === 1) {
   routes = [
     {

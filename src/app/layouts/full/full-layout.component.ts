@@ -36,6 +36,7 @@ export class FullLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     bgImage: "assets/img/sidebar-bg/01.jpg"
   };
   hideSidebar: boolean;
+  loggedIn: boolean = false;
   layoutSub: Subscription;
   iscollapsed = false;
   isSidebar_sm = false;
@@ -271,6 +272,7 @@ export class FullLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
       this.layoutSub.unsubscribe();
     }
   }
+  checkLogin() {}
 
   onClick(event) {
     //initialize window resizer event on sidebar toggle click event

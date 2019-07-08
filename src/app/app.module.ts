@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { FormsModule } from "@angular/forms";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
@@ -22,6 +22,7 @@ import {
 } from "ngx-perfect-scrollbar";
 
 import { AppComponent } from "./app.component";
+
 import { ContentLayoutComponent } from "./layouts/content/content-layout.component";
 import { FullLayoutComponent } from "./layouts/full/full-layout.component";
 import { AuthenticationService } from "./pages/services";
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     StoreModule.forRoot({}),
     AppRoutingModule,
+    FormsModule,
     SharedModule,
     HttpModule,
     HttpClientModule,

@@ -21,6 +21,7 @@ import { SidebarListDirective } from "./directives/sidebarlist.directive";
 import { SidebarAnchorToggleDirective } from "./directives/sidebaranchortoggle.directive";
 import { SidebarToggleDirective } from "./directives/sidebartoggle.directive";
 import { RoleGuard } from "../pages/services/role.guard";
+import { RouteData } from "./sidebar/sidebar-routes.config";
 
 @NgModule({
   exports: [
@@ -54,6 +55,7 @@ import { RoleGuard } from "../pages/services/role.guard";
     SidebarListDirective,
     SidebarAnchorToggleDirective,
     SidebarToggleDirective
-  ]
+  ],
+  providers: [RouteData]
 })
 export class SharedModule {}

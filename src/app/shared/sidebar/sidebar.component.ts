@@ -10,6 +10,9 @@ import {
 } from "@angular/core";
 
 import { ROUTES } from "./sidebar-routes.config";
+import { ADMINROUTES } from "./sidebar-routes.config-admin";
+import { DATAROUTES } from "./sidebar-routes.config-data";
+import { RouteData } from "./sidebar-routes.config";
 import { RouteInfo } from "./sidebar.metadata";
 import { Router, ActivatedRoute } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
@@ -21,6 +24,7 @@ import { Subscription } from "rxjs";
 @Component({
   selector: "app-sidebar",
   templateUrl: "./sidebar.component.html",
+
   animations: customAnimations
 })
 export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -42,7 +46,8 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
     private route: ActivatedRoute,
     public translate: TranslateService,
     private configService: ConfigService,
-    private layoutService: LayoutService
+    private layoutService: LayoutService,
+    private routedata: RouteData
   ) {
     if (this.depth === undefined) {
       this.depth = 0;
@@ -90,12 +95,27 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit() {
     this.config = this.configService.templateConf;
-    this.menuItems = ROUTES;
-
+    //this.menuItems = ROUTES;
+    this.routeReload();
     if (this.config.layout.sidebar.backgroundColor === "white") {
       this.logoUrl = "assets/img/logo-dark.png";
     } else {
       this.logoUrl = "assets/img/logo.png";
+    }
+  }
+  routeReload() {
+    const userInfo = JSON.parse(localStorage.getItem("userinfo"));
+
+    var user: any = {};
+    if (userInfo === null) {
+      user.usertype = 2;
+    } else {
+      user = userInfo.user;
+      if (user.usertype === 1) {
+        this.menuItems = ADMINROUTES;
+      } else {
+        this.menuItems = DATAROUTES;
+      }
     }
   }
 

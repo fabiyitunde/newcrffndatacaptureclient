@@ -15,6 +15,12 @@ const appRoutes: Routes = [
     redirectTo: "pages/login",
     pathMatch: "full"
   },
+  // {
+  //   path: "",
+  //   //redirectTo: "login",
+  //   component: LoginComponent,
+  //   pathMatch: "full"
+  // },
   {
     path: "",
     component: FullLayoutComponent,

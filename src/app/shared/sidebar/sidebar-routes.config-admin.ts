@@ -133,7 +133,7 @@ routes = [
         submenu: []
       },
       {
-        path: "/administrator/uunapprovedcorporatelist",
+        path: "/administrator/unapprovedcorporatelist",
         title: "Unapproved Corporate ",
         icon: "",
         class: "",

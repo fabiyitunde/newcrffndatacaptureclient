@@ -38,7 +38,7 @@ export class UnapprovedcorporatelistComponent implements OnInit {
   }
 
   approve(id: any) {
-    this.router.navigate(["pages/approvecorporatedata", id]);
+    this.router.navigate(["administrator/approvecorporatedata", id]);
   }
 
   updateFilter(event) {

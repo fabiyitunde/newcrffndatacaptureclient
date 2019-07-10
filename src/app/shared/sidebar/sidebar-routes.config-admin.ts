@@ -28,27 +28,27 @@ routes = [
     badgeClass: "badge badge-pill badge-danger float-right mr-1 mt-1",
     isExternalLink: false,
     submenu: [
-      {
-        path: "/pages/certificateregisterlist",
-        title: "Certificate Reg.",
-        icon: "",
-        class: "",
-        badge: "",
-        badgeClass: "",
-        isExternalLink: false,
-        submenu: []
-      },
+      // {
+      //   path: "/pages/certificateregisterlist",
+      //   title: "Certificate Reg.",
+      //   icon: "",
+      //   class: "",
+      //   badge: "",
+      //   badgeClass: "",
+      //   isExternalLink: false,
+      //   submenu: []
+      // },
 
-      {
-        path: "/pages/unsubmittedcertificateregisterlist",
-        title: "Unsubmited List",
-        icon: "",
-        class: "",
-        badge: "",
-        badgeClass: "",
-        isExternalLink: false,
-        submenu: []
-      },
+      // {
+      //   path: "/pages/unsubmittedcertificateregisterlist",
+      //   title: "Unsubmited List",
+      //   icon: "",
+      //   class: "",
+      //   badge: "",
+      //   badgeClass: "",
+      //   isExternalLink: false,
+      //   submenu: []
+      // },
       {
         path: "/administrator/unapprovedcertificateregisterlist",
         title: "Unapproved Certificates",
@@ -83,8 +83,8 @@ routes = [
     isExternalLink: false,
     submenu: [
       {
-        path: "/pages/individualissuedcertificatelist",
-        title: "Issued Cert. Individidual ",
+        path: "/administrator/individualissuedcertificatelist",
+        title: "Issued Cert. Individual ",
         icon: "",
         class: "",
         badge: "",
@@ -93,7 +93,7 @@ routes = [
         submenu: []
       },
       {
-        path: "/pages/corporateissuedcertificatelist",
+        path: "/administrator/corporateissuedcertificatelist",
         title: "Issued Cert. Corporate ",
         icon: "",
         class: "",
@@ -102,26 +102,26 @@ routes = [
         isExternalLink: false,
         submenu: []
       },
-      {
-        path: "/pages/unsubmittedindividualdatalist",
-        title: "Unsubmitted Individual ",
-        icon: "",
-        class: "",
-        badge: "",
-        badgeClass: "",
-        isExternalLink: false,
-        submenu: []
-      },
-      {
-        path: "/pages/unsubmittedcorporatedatalist",
-        title: "Unsubmitted Corporate ",
-        icon: "",
-        class: "",
-        badge: "",
-        badgeClass: "",
-        isExternalLink: false,
-        submenu: []
-      },
+      // {
+      //   path: "/pages/unsubmittedindividualdatalist",
+      //   title: "Unsubmitted Individual ",
+      //   icon: "",
+      //   class: "",
+      //   badge: "",
+      //   badgeClass: "",
+      //   isExternalLink: false,
+      //   submenu: []
+      // },
+      // {
+      //   path: "/pages/unsubmittedcorporatedatalist",
+      //   title: "Unsubmitted Corporate ",
+      //   icon: "",
+      //   class: "",
+      //   badge: "",
+      //   badgeClass: "",
+      //   isExternalLink: false,
+      //   submenu: []
+      // },
       {
         path: "/administrator/unapprovedindividuallist",
         title: "Unapproved Individual ",

@@ -11,6 +11,8 @@ import { ApprovecorporatedataComponent } from "./approvecorporatedata/approvecor
 import { UnapprovedcorporatelistComponent } from "./unapprovedcorporatelist/unapprovedcorporatelist.component";
 import { UnapprovedindividuallistComponent } from "./unapprovedindividuallist/unapprovedindividuallist.component";
 import { CreateuserComponent } from "./createuser/createuser.component";
+import { IndividualissuedcertificatelistviewComponent } from "./individualissuedcertificatelistview/individualissuedcertificatelist.component";
+import { CorporateissuedcertificatelistviewComponent } from "./corporateissuedcertificatelistview/corporateissuedcertificatelist.component";
 
 const routes: Routes = [
   {
@@ -47,6 +49,20 @@ const routes: Routes = [
         component: UnapprovedcorporatelistComponent,
         data: {
           title: "Unapproved Corporate List Page"
+        }
+      },
+      {
+        path: "individualissuedcertificatelist",
+        component: IndividualissuedcertificatelistviewComponent,
+        data: {
+          title: "Individual Issued Certificate List Page"
+        }
+      },
+      {
+        path: "corporateissuedcertificatelist",
+        component: CorporateissuedcertificatelistviewComponent,
+        data: {
+          title: "Corporate Issued Certificate List Page"
         }
       },
       {

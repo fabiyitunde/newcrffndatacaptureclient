@@ -16,6 +16,8 @@ import { ApprovecorporatedataComponent } from "./approvecorporatedata/approvecor
 import { UnapprovedcorporatelistComponent } from "./unapprovedcorporatelist/unapprovedcorporatelist.component";
 import { UnapprovedindividuallistComponent } from "./unapprovedindividuallist/unapprovedindividuallist.component";
 import { CreateuserComponent } from "./createuser/createuser.component";
+import { IndividualissuedcertificatelistviewComponent } from "./individualissuedcertificatelistview/individualissuedcertificatelist.component";
+import { CorporateissuedcertificatelistviewComponent } from "./corporateissuedcertificatelistview/corporateissuedcertificatelist.component";
 
 @NgModule({
   imports: [
@@ -38,6 +40,8 @@ import { CreateuserComponent } from "./createuser/createuser.component";
     ApproveindividualdataComponent,
     UnapprovedcorporatelistComponent,
     UnapprovedindividuallistComponent,
+    IndividualissuedcertificatelistviewComponent,
+    CorporateissuedcertificatelistviewComponent,
 
     CreateuserComponent
   ],

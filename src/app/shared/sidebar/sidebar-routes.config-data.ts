@@ -65,7 +65,7 @@ routes = [
     submenu: [
       {
         path: "/pages/individualissuedcertificatelist",
-        title: "Issued Cert. Individidual ",
+        title: "Issued Cert. Individual ",
         icon: "",
         class: "",
         badge: "",

@@ -32,13 +32,24 @@ export class CreateindividualdataComponent implements OnInit {
 
     this.service.getindividualissuedcertificatelist().subscribe(result => {
       result.filter(obj => {
-        obj._id === this.recordid;
-        this.item = obj;
-        this.surname = this.item.name.split(" ").slice(0, 1);
-        this.othernames = this.item.name.split(" ").slice(1, 3);
-        this.category = obj.category;
-        return obj;
+        if (obj._id === this.recordid) {
+          this.item = obj;
+          this.surname = this.item.name.split(" ").slice(0, 1);
+          this.othernames = this.item.name.split(" ").slice(1, 3);
+          this.category = obj.category;
+          return obj;
+        }
       });
+      console.log(this.item);
+      // result.filter(obj => {
+      //   obj._id === this.recordid;
+      //   console.log(obj._id);
+      //   this.item = obj;
+      //   this.surname = this.item.name.split(" ").slice(0, 1);
+      //   this.othernames = this.item.name.split(" ").slice(1, 3);
+      //   this.category = obj.category;
+      //   return obj;
+      // });
     });
     this.service.getstatelist().subscribe(result => {
       this.statelist = result;

@@ -30,11 +30,12 @@ export class CreatecorporatedataComponent implements OnInit {
 
     this.service.getcorporateissuedcertificatelist().subscribe(result => {
       result.filter(obj => {
-        obj._id === this.recordid;
-        this.category = obj.category;
-        this.item = obj;
+        if (obj._id === this.recordid) {
+          this.category = obj.category;
+          this.item = obj;
 
-        return obj;
+          return obj;
+        }
       });
     });
     this.service.getstatelist().subscribe(result => {

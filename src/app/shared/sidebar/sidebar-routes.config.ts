@@ -8,17 +8,37 @@ const userInfo = JSON.parse(localStorage.getItem("userinfo"));
 var user: any = {};
 var routes: any[] = [];
 //user = userInfo.user;
-if (userInfo === null) {
-  user.usertype = 3;
-} else {
-  user = userInfo.user;
-  // console.log(user.usertype);
-  if (user.usertype === 1) {
-    routes = [
+// if (userInfo === null) {
+//   user.usertype = 3;
+// } else {
+//   user = userInfo.user;
+//   // console.log(user.usertype);
+//   if (user.usertype === 1) {
+routes = [
+  {
+    path: "/pages/home",
+    title: "Home",
+    icon: "ft-home",
+    class: "",
+    badge: "",
+    badgeClass: "",
+    isExternalLink: false,
+    submenu: []
+  },
+
+  {
+    path: "/pages/certificateregisterlist",
+    title: "Certificate Register",
+    icon: "ft-align-justify",
+    class: "has-sub",
+    badge: "",
+    badgeClass: "badge badge-pill badge-danger float-right mr-1 mt-1",
+    isExternalLink: false,
+    submenu: [
       {
-        path: "/pages/home",
-        title: "Home",
-        icon: "ft-home",
+        path: "/pages/certificateregisterlist",
+        title: "Certificate Reg.",
+        icon: "",
         class: "",
         badge: "",
         badgeClass: "",
@@ -27,137 +47,19 @@ if (userInfo === null) {
       },
 
       {
-        path: "/pages/certificateregisterlist",
-        title: "Certificate Register",
-        icon: "ft-align-justify",
-        class: "has-sub",
+        path: "/pages/unsubmittedcertificateregisterlist",
+        title: "Unsubmited List",
+        icon: "",
+        class: "",
         badge: "",
-        badgeClass: "badge badge-pill badge-danger float-right mr-1 mt-1",
+        badgeClass: "",
         isExternalLink: false,
-        submenu: [
-          {
-            path: "/pages/certificateregisterlist",
-            title: "Certificate Reg.",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-
-          {
-            path: "/pages/unsubmittedcertificateregisterlist",
-            title: "Unsubmited List",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/administrator/unapprovedcertificateregisterlist",
-            title: "Unapproved Certificates",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-
-          {
-            path: "/administrator/unissuedcertificatelist",
-            title: "Unissued Certificates",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          }
-        ]
+        submenu: []
       },
-
       {
-        path: "",
-        title: "Data Capture",
-        icon: "ft-camera",
-        class: "has-sub",
-        badge: "",
-        badgeClass: "badge badge-pill badge-danger float-right mr-1 mt-1",
-        isExternalLink: false,
-        submenu: [
-          {
-            path: "/pages/individualissuedcertificatelist",
-            title: "Issued Cert. Individidual ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/pages/corporateissuedcertificatelist",
-            title: "Issued Cert. Corporate ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/pages/unsubmittedindividualdatalist",
-            title: "Unsubmitted Individual ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/pages/unsubmittedcorporatedatalist",
-            title: "Unsubmitted Corporate ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/administrator/unapprovedindividuallist",
-            title: "Unapproved Individual ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/administrator/uunapprovedcorporatelist",
-            title: "Unapproved Corporate ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          }
-        ]
-      }
-    ];
-  } else {
-    routes = [
-      {
-        path: "/pages/home",
-        title: "Home",
-        icon: "ft-home",
+        path: "/administrator/unapprovedcertificateregisterlist",
+        title: "Unapproved Certificates",
+        icon: "",
         class: "",
         badge: "",
         badgeClass: "",
@@ -166,92 +68,90 @@ if (userInfo === null) {
       },
 
       {
-        path: "/pages/certificateregisterlist",
-        title: "Certificate Register",
-        icon: "ft-align-justify",
-        class: "has-sub",
+        path: "/administrator/unissuedcertificatelist",
+        title: "Unissued Certificates",
+        icon: "",
+        class: "",
         badge: "",
-        badgeClass: "badge badge-pill badge-danger float-right mr-1 mt-1",
+        badgeClass: "",
         isExternalLink: false,
-        submenu: [
-          {
-            path: "/pages/certificateregisterlist",
-            title: "Certificate Reg.",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-
-          {
-            path: "/pages/unsubmittedcertificateregisterlist",
-            title: "Unsubmited List",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          }
-        ]
-      },
-
-      {
-        path: "",
-        title: "Data Capture",
-        icon: "ft-camera",
-        class: "has-sub",
-        badge: "",
-        badgeClass: "badge badge-pill badge-danger float-right mr-1 mt-1",
-        isExternalLink: false,
-        submenu: [
-          {
-            path: "/pages/individualissuedcertificatelist",
-            title: "Issued Cert. Individidual ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/pages/corporateissuedcertificatelist",
-            title: "Issued Cert. Corporate ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/pages/unsubmittedindividualdatalist",
-            title: "Unsubmitted Individual ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          },
-          {
-            path: "/pages/unsubmittedcorporatedatalist",
-            title: "Unsubmitted Corporate ",
-            icon: "",
-            class: "",
-            badge: "",
-            badgeClass: "",
-            isExternalLink: false,
-            submenu: []
-          }
-        ]
+        submenu: []
       }
-    ];
+    ]
+  },
+
+  {
+    path: "",
+    title: "Data Capture",
+    icon: "ft-camera",
+    class: "has-sub",
+    badge: "",
+    badgeClass: "badge badge-pill badge-danger float-right mr-1 mt-1",
+    isExternalLink: false,
+    submenu: [
+      {
+        path: "/pages/individualissuedcertificatelist",
+        title: "Issued Cert. Individidual ",
+        icon: "",
+        class: "",
+        badge: "",
+        badgeClass: "",
+        isExternalLink: false,
+        submenu: []
+      },
+      {
+        path: "/pages/corporateissuedcertificatelist",
+        title: "Issued Cert. Corporate ",
+        icon: "",
+        class: "",
+        badge: "",
+        badgeClass: "",
+        isExternalLink: false,
+        submenu: []
+      },
+      {
+        path: "/pages/unsubmittedindividualdatalist",
+        title: "Unsubmitted Individual ",
+        icon: "",
+        class: "",
+        badge: "",
+        badgeClass: "",
+        isExternalLink: false,
+        submenu: []
+      },
+      {
+        path: "/pages/unsubmittedcorporatedatalist",
+        title: "Unsubmitted Corporate ",
+        icon: "",
+        class: "",
+        badge: "",
+        badgeClass: "",
+        isExternalLink: false,
+        submenu: []
+      },
+      {
+        path: "/administrator/unapprovedindividuallist",
+        title: "Unapproved Individual ",
+        icon: "",
+        class: "",
+        badge: "",
+        badgeClass: "",
+        isExternalLink: false,
+        submenu: []
+      },
+      {
+        path: "/administrator/uunapprovedcorporatelist",
+        title: "Unapproved Corporate ",
+        icon: "",
+        class: "",
+        badge: "",
+        badgeClass: "",
+        isExternalLink: false,
+        submenu: []
+      }
+    ]
   }
-}
+];
 
 export const ROUTES: RouteInfo[] = routes;
 @Injectable()

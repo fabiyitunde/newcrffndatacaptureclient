@@ -29,7 +29,7 @@ export class CorporateissuedcertificatelistComponent implements OnInit {
       this.temp = [...result];
 
       this.rows = result;
-      console.log(this.rows);
+      // console.log(this.rows);
     });
   }
 

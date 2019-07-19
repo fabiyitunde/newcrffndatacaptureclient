@@ -12,7 +12,7 @@ import { DatatableComponent } from "@swimlane/ngx-datatable/release";
 export class CorporateforwarderslistComponent implements OnInit {
   recordid: any;
   data: any = {};
-
+  isDataEntry: boolean;
   rows = [];
   temp = [];
   columns = [{ prop: "companyname:" }, { name: "membershipnumber" }];
@@ -30,6 +30,19 @@ export class CorporateforwarderslistComponent implements OnInit {
 
       this.rows = result;
     });
+    const userInfo = JSON.parse(localStorage.getItem("userinfo"));
+
+    var user: any = {};
+    if (userInfo === null) {
+      this.isDataEntry = true;
+    } else {
+      user = userInfo.user;
+      if (user.usertype === 1) {
+        this.isDataEntry = false;
+      } else {
+        this.isDataEntry = true;
+      }
+    }
   }
 
   detail(id: any) {

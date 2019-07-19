@@ -51,7 +51,7 @@
           </ng-template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column>
+        <ngx-datatable-column *ngIf="isDataEntry">
           <ng-template ngx-datatable-header-template>
             <span>Detail</span>
           </ng-template>

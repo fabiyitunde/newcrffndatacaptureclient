@@ -29,7 +29,6 @@ export class ApprovecertificateregisterdetailComponent implements OnInit {
         .subscribe(result => {
           this.item = result;
           this.category = this.item.category;
-          console.log(this.item);
         });
     });
   }
@@ -41,7 +40,6 @@ export class ApprovecertificateregisterdetailComponent implements OnInit {
 
       this.data.membershipnumber = this.item.membershipnumber;
 
-      console.log(this.data);
       this.service.approverecord(this.data).subscribe(result => {
         alert("Record Approved SuccessFully");
         this.router.navigate([
@@ -53,7 +51,6 @@ export class ApprovecertificateregisterdetailComponent implements OnInit {
   return() {
     this.data.membershipnumber = this.item.membershipnumber;
 
-    console.log(this.data);
     this.service.returnrecord(this.data).subscribe(result => {
       alert("Record Approved SuccessFully");
       this.router.navigate(["administrator/unapprovedcertificateregisterlist"]);

@@ -38,7 +38,6 @@ export class ApprovecorporatedataComponent implements OnInit {
 
       this.data.membershipnumber = this.item.membershipnumber;
 
-      console.log(this.data);
       this.service.returnrecord(this.data).subscribe(result => {
         alert("Practitioner Detail Returned SuccessFully");
         this.back();
@@ -53,7 +52,6 @@ export class ApprovecorporatedataComponent implements OnInit {
 
       this.data.membershipnumber = this.item.membershipnumber;
 
-      console.log(this.data);
       this.service.approverecord(this.data).subscribe(result => {
         alert("Practitioner detail Approved SuccessFully");
         this.back();

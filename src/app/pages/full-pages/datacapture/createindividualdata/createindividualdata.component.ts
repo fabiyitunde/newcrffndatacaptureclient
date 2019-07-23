@@ -67,10 +67,15 @@ export class CreateindividualdataComponent implements OnInit {
     this.data.membershipnumber = this.item.membershipnumber;
     this.data.category = this.item.category;
 
-    this.service.saverecord(this.data).subscribe(result => {
-      alert("Record Created SuccessFully");
-      this.back();
-    });
+    this.service.saverecord(this.data).subscribe(
+      result => {
+        alert("Record Created SuccessFully");
+        this.back();
+      },
+      err => {
+        alert(err);
+      }
+    );
   }
   back() {
     this.router.navigate(["pages/individualissuedcertificatelist"]);

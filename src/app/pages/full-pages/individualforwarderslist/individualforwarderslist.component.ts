@@ -18,6 +18,7 @@ export class IndividualforwarderslistComponent implements OnInit {
   columns = [
     { name: "surname" },
     { prop: "firstname" },
+    { prop: "middlename" },
     { prop: "membershipnumber" }
   ];
 

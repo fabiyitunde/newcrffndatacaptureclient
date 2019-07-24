@@ -32,14 +32,18 @@ export class IndividualdetailComponent implements OnInit {
   submit() {
     this.data.userid = JSON.parse(localStorage.getItem("userinfo")).user.id;
     this.data.mongo_id = this.recordid;
-    this.data.name =
-      this.item.surname +
-      " " +
-      this.item.firstname +
-      " " +
-      this.item.middlename;
+    this.data.surname = this.item.surname;
+    this.data.firstname = this.item.firstname;
+    this.data.middlename = this.item.middlename;
     this.data.membershipnumber = this.item.membershipnumber;
-    this.data.category = this.item.category;
+    // this.data.name =
+    //   this.item.surname +
+    //   " " +
+    //   this.item.firstname +
+    //   " " +
+    //   this.item.middlename;
+
+    //this.data.category = this.item.category;
 
     console.log(this.data);
     this.service.saverecord(this.data).subscribe(result => {

@@ -49,7 +49,7 @@ export class ApproveCertificateDetailService {
   returnrecord(model: any) {
     const url = `${
       environment.webapibaseurl
-    }certificateregister/approveCertificateRegister`;
+    }certificateregister/returnCertificateRegister`;
     return this.http
       .post(url, model)
       .map((response: Response) => response)

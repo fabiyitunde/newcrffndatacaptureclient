@@ -20,6 +20,12 @@
       <input
         type="text"
         style="padding:8px;margin:15px auto;width:30%; margin-left: 20px;"
+        placeholder="Type to filter the firstname column..."
+        (keyup)="firstnameFilter($event)"
+      />
+      <input
+        type="text"
+        style="padding:8px;margin:15px auto;width:30%; margin-left: 20px;"
         placeholder="Type to filter the membership ID column..."
         (keyup)="membershipIDFilter($event)"
       />

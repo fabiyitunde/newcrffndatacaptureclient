@@ -52,7 +52,7 @@ export class ApprovecertificateregisterdetailComponent implements OnInit {
     this.data.membershipnumber = this.item.membershipnumber;
 
     this.service.returnrecord(this.data).subscribe(result => {
-      alert("Record Approved SuccessFully");
+      alert("Record Returned SuccessFully");
       this.router.navigate(["administrator/unapprovedcertificateregisterlist"]);
     });
   }

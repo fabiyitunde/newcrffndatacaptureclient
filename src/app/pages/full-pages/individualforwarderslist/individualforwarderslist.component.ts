@@ -59,7 +59,22 @@ export class IndividualforwarderslistComponent implements OnInit {
 
     // filter our data
     const temp = this.temp.filter(function(d) {
+      //console.log(d.surname);
       return d.surname.toLowerCase().indexOf(val) !== -1 || !val;
+    });
+
+    // update the rows
+    this.rows = temp;
+    // Whenever the filter changes, always go back to the first page
+    this.table.offset = 0;
+  }
+  firstnameFilter(event) {
+    const val = event.target.value.toLowerCase();
+
+    // filter our data
+    const temp = this.temp.filter(function(d) {
+      // console.log(d.firstname);
+      return d.firstname.toLowerCase().indexOf(val) !== -1 || !val;
     });
 
     // update the rows
@@ -74,6 +89,7 @@ export class IndividualforwarderslistComponent implements OnInit {
     // filter our data
     const temp = this.temp.filter(function(d) {
       return d.membershipnumber.toLowerCase().indexOf(val) !== -1 || !val;
+      //return d.surname.toLowerCase().indexOf(val) !== -1 || !val;
     });
 
     // update the rows

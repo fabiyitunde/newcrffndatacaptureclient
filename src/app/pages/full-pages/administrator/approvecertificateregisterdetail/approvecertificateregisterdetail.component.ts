@@ -49,12 +49,16 @@ export class ApprovecertificateregisterdetailComponent implements OnInit {
     }
   }
   return() {
-    this.data.membershipnumber = this.item.membershipnumber;
+    if (window.confirm("Are you sure you want to Return?")) {
+      this.data.membershipnumber = this.item.membershipnumber;
 
-    this.service.returnrecord(this.data).subscribe(result => {
-      alert("Record Returned SuccessFully");
-      this.router.navigate(["administrator/unapprovedcertificateregisterlist"]);
-    });
+      this.service.returnrecord(this.data).subscribe(result => {
+        alert("Record Returned SuccessFully");
+        this.router.navigate([
+          "administrator/unapprovedcertificateregisterlist"
+        ]);
+      });
+    }
   }
   edit(id: any) {
     this.router.navigate(["pages/updatecertificateregister", id]);

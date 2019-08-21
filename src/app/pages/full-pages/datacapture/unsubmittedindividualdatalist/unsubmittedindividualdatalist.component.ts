@@ -40,10 +40,6 @@ export class UnsubmittedindividualdatalistComponent implements OnInit {
     this.router.navigate(["pages/submitindividualdata", id]);
   }
 
-  upload(id: any) {
-    this.router.navigate(["pages/uploadindividualpassportphoto", id]);
-  }
-
   updateFilter(event) {
     const val = event.target.value.toLowerCase();
 

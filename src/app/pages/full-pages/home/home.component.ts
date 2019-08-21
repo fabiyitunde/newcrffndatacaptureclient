@@ -17,4 +17,11 @@ export class HomeComponent implements OnInit {
   corporate() {
     this.router.navigate(["pages/corporateforwarderslist"]);
   }
+
+  createIndividual() {
+    this.router.navigate(["pages/createindividual"]);
+  }
+  createCorporate() {
+    this.router.navigate(["pages/createcorporate"]);
+  }
 }

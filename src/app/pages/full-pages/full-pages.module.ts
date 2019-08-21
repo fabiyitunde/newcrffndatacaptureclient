@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { FullPagesRoutingModule } from "./full-pages-routing.module";
 import { ChartistModule } from "ng-chartist";
@@ -44,14 +44,20 @@ import { EditcorporatedataComponent } from "./datacapture/editcorporatedata/edit
 import { EditindividualdataComponent } from "./datacapture/editindividualdata/editindividualdata.component";
 import { CorporateissuedcertificatelistComponent } from "./corporateissuedcertificatelist/corporateissuedcertificatelist.component";
 import { IndividualissuedcertificatelistComponent } from "./individualissuedcertificatelist/individualissuedcertificatelist.component";
-
+import { CreateindividualComponent } from "./createindividual/createindividual.component";
+import { CreatecorporateComponent } from "./createcorporate/createcorporate.component";
+import { ModalComponent } from "./datacapture/createindividualdata/modals/modal/modal.component";
+import { SpinnerComponent } from "./spinner/spinner.component";
+import { WebcamModule } from "ngx-webcam";
 const PAGES_COMPONENTS = [FullPagesComponent];
 
 @NgModule({
   imports: [
     CommonModule,
+    WebcamModule,
     FullPagesRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     ChartistModule,
     AgmCoreModule,
     DataTablesModule,
@@ -93,7 +99,13 @@ const PAGES_COMPONENTS = [FullPagesComponent];
     UnsubmittedcorporatedatalistComponent,
     UnsubmittedindividualdatalistComponent,
     EditcorporatedataComponent,
-    EditindividualdataComponent
-  ]
+    EditindividualdataComponent,
+    CreateindividualComponent,
+    CreatecorporateComponent,
+    ModalComponent,
+    SpinnerComponent
+  ],
+  entryComponents: [ModalComponent],
+  exports: [ModalComponent]
 })
 export class FullPagesModule {}

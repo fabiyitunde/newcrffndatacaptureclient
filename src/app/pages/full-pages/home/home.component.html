@@ -7,12 +7,20 @@
       <h4 class="card-title">Individual</h4>
       <span class="grey">Freight Forwarders</span>
     </div>
-    <button
-      class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover"
-      (click)="individual()"
-    >
-      Individual
-    </button>
+    <div class="row">
+      <button
+        class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover col-md-6"
+        (click)="individual()"
+      >
+        Individual List
+      </button>
+      <button
+        class="btn btn-raised gradient-blue-grey-blue white shadow-z-1-hover col-md-6"
+        (click)="createIndividual()"
+      >
+        Create Individual
+      </button>
+    </div>
   </div>
   <div
     class="card col-md-6"
@@ -22,11 +30,19 @@
       <h4 class="card-title">Corporate</h4>
       <span class="grey">Freight Forwarders</span>
     </div>
-    <button
-      class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover"
-      (click)="corporate()"
-    >
-      Corporate
-    </button>
+    <div class="row">
+      <button
+        class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover col-md-6"
+        (click)="corporate()"
+      >
+        Corporate List
+      </button>
+      <button
+        class="btn btn-raised gradient-blue-grey-blue white shadow-z-1-hover col-md-6"
+        (click)="createCorporate()"
+      >
+        Create Corporate
+      </button>
+    </div>
   </div>
 </div>

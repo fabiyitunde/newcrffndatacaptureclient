@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, Output } from "@angular/core";
 import { EditIndividualDataService } from "./editindividualdata.service";
 import { Router, ActivatedRoute } from "@angular/router";
+import { ModalComponent } from "../createindividualdata/modals/modal/modal.component";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-editindividualdata",
   templateUrl: "./editindividualdata.component.html",
@@ -18,11 +20,13 @@ export class EditindividualdataComponent implements OnInit {
   lgalist: any = [];
   surname: string;
   othernames: string;
+  @Output() membershipnumber: number;
 
   constructor(
     private service: EditIndividualDataService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private modalService: NgbModal
   ) {}
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -47,6 +51,27 @@ export class EditindividualdataComponent implements OnInit {
     this.service.getlgalist(ev.target.value).subscribe(result => {
       this.lgalist = result;
     });
+  }
+  showSmallModal() {
+    let membershipnumber = this.item.membershipnumber;
+    const activeModal = this.modalService.open(ModalComponent, {
+      ariaLabelledBy: "modal-basic-title"
+    });
+    (<ModalComponent>(
+      activeModal.componentInstance
+    )).membershipnumber = membershipnumber;
+
+    this.membershipnumber = membershipnumber;
+    console.log(membershipnumber);
+    activeModal.componentInstance.modalHeader = "Upload Image";
+
+    activeModal.result
+      .then(result => {
+        // this.getstafflist();
+      })
+      .catch(result => {
+        console.log(result);
+      });
   }
 
   update() {

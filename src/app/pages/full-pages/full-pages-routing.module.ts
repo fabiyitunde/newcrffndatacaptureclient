@@ -30,6 +30,9 @@ import { EditindividualdataComponent } from "./datacapture/editindividualdata/ed
 import { CorporateissuedcertificatelistComponent } from "./corporateissuedcertificatelist/corporateissuedcertificatelist.component";
 import { IndividualissuedcertificatelistComponent } from "./individualissuedcertificatelist/individualissuedcertificatelist.component";
 
+import { CreateindividualComponent } from "./createindividual/createindividual.component";
+import { CreatecorporateComponent } from "./createcorporate/createcorporate.component";
+
 import { Auth_Guard } from "../services/auth.guard";
 const routes: Routes = [
   {
@@ -221,6 +224,21 @@ const routes: Routes = [
         component: InvoicePageComponent,
         data: {
           title: "Invoice Page"
+        }
+      },
+      {
+        path: "createindividual",
+        component: CreateindividualComponent,
+        data: {
+          title: "create individual"
+        }
+      },
+
+      {
+        path: "createcorporate",
+        component: CreatecorporateComponent,
+        data: {
+          title: "create corporate"
         }
       }
     ]

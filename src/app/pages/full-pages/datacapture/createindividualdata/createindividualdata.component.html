@@ -9,21 +9,24 @@
     <div class="card-content">
       <div class="card-body ">
         <form (ngSubmit)="submit()">
-          <div class="col-md-8">
-            <ul _ngcontent-c8="" class="list-group">
-              <li _ngcontent-c8="" class="list-group-item text-left">
-                <p class="float-right ">{{ item.name }}</p>
-                <b>Name</b>
-              </li>
-              <li _ngcontent-c8="" class="list-group-item text-left">
-                <p class="float-right ">{{ item.membershipnumber }}</p>
-                <b>Membership Number</b>
-              </li>
-              <li _ngcontent-c8="" class="list-group-item text-left">
-                <p class="float-right ">{{ category.description }}</p>
-                <b>Category</b>
-              </li>
-            </ul>
+          <div class="row">
+            <div class="col-md-8">
+              <ul _ngcontent-c8="" class="list-group">
+                <li _ngcontent-c8="" class="list-group-item text-left">
+                  <p class="float-right ">{{ item.name }}</p>
+                  <b>Name</b>
+                </li>
+                <li _ngcontent-c8="" class="list-group-item text-left">
+                  <p class="float-right ">{{ item.membershipnumber }}</p>
+                  <b>Membership Number</b>
+                </li>
+                <li _ngcontent-c8="" class="list-group-item text-left">
+                  <p class="float-right ">{{ category.description }}</p>
+                  <b>Category</b>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4"></div>
           </div>
           <div
             class="media-body  gredient-blackberry"
@@ -162,21 +165,51 @@
               </div>
             </div>
           </div>
+          <div class="row col-md-12">
+            <button
+              (click)="back()"
+              class="btn btn-raised btn-primary white shadow-z-1-hover"
+              style="margin-top: 20px"
+            >
+              Back
+            </button>
 
-          <button
-            (click)="back()"
-            class="btn btn-raised btn-primary white shadow-z-1-hover"
-            style="margin-top: 20px"
-          >
-            Back
-          </button>
-          <button
-            style="margin-top: 20px"
-            type="submit"
-            class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover float-right"
-          >
-            Save
-          </button>
+            <button
+              style="margin-top: 20px"
+              type="submit"
+              class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover float-right"
+            >
+              Save
+            </button>
+          </div>
+          <div class="row">
+            <div
+              _ngcontent-abm-c7=""
+              style="float: right"
+              class="mb-3"
+              *ngIf="formCompleted"
+            >
+              <a
+                _ngcontent-abm-c7=""
+                class="btn btn-raised gradient-mint white shadow-z-4"
+                (click)="showSmallModal()"
+                >Upload Image</a
+              >
+            </div>
+            <div
+              _ngcontent-abm-c7=""
+              style="float: right"
+              class="mb-3"
+              *ngIf="formCompleted"
+            >
+              <a
+                _ngcontent-abm-c7=""
+                class="btn btn-raised gradient-mint white shadow-z-4"
+                (click)="back()"
+                >Back to List</a
+              >
+            </div>
+          </div>
         </form>
       </div>
     </div>

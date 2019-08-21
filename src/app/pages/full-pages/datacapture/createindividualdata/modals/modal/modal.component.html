@@ -1,0 +1,86 @@
+<div class="modal-header">
+  <span>{{ modalHeader }}</span>
+  <button class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div>
+    <form #imageForm="ngForm" (ngSubmit)="onSubmit()">
+      <img [src]="imageUrl" style="width:250px; height:250px" />
+      <webcam
+        [height]="400"
+        [width]="400"
+        [trigger]="triggerObservable"
+        (imageCapture)="handleImage($event)"
+        [allowCameraSwitch]="allowCameraSwitch"
+        [switchCamera]="nextWebcamObservable"
+        [videoOptions]="videoOptions"
+        [imageQuality]="0.5"
+        (cameraSwitched)="cameraWasSwitched($event)"
+        (initError)="handleInitError($event)"
+        *ngIf="isWebcam"
+      ></webcam>
+      <label
+        class="btn gradient-purple-bliss imagePointer"
+        *ngIf="isFileuploader"
+      >
+        <span style="color: white">Select Image</span>
+        <input
+          type="file"
+          #image
+          accept="image/*"
+          (change)="handleFileInput($event.target.files)"
+      /></label>
+
+      <div class="row">
+        <!-- <button
+          type="submit"
+          [disabled]="image.value == ''"
+          class="btn shadow-z-4 gradient-mint "
+        >
+          <span style="color: white">Upload Photo</span>
+        </button> -->
+        <div _ngcontent-abm-c7="" class="mb-3">
+          <a
+            _ngcontent-abm-c7=""
+            class="btn  gradient-mint white shadow-z-4"
+            (click)="onSubmit()"
+            >Upload Photo</a
+          >
+        </div>
+        <div _ngcontent-abm-c7="" class="mb-3">
+          <a
+            _ngcontent-abm-c7=""
+            class="btn  gradient-mint white shadow-z-4"
+            (click)="webcam()"
+            >Use Webcam</a
+          >
+        </div>
+        <div _ngcontent-abm-c7="" class="mb-3" *ngIf="isWebcam">
+          <a
+            _ngcontent-abm-c7=""
+            class="btn  gradient-mint white shadow-z-4"
+            (click)="triggerSnapshot()"
+            >Take a Snapshot</a
+          >
+        </div>
+        <div
+          class="col-md-4"
+          style="height:15px; margin-top:-120px "
+          *ngIf="spinner"
+        >
+          <spinner class="col-md-6"></spinner>
+        </div>
+      </div>
+    </form>
+
+    <div class="item text-warning" *ngIf="uploadInProgress">
+      Upload in progress ...
+    </div>
+    <div class="item text-success" *ngIf="uploadCompleted">
+      Upload completed
+    </div>
+  </div>
+</div>
+<div class="modal-footer"></div>

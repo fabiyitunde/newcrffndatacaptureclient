@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TranslateModule } from "@ngx-translate/core";
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
-
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 //COMPONENTS
 import { FooterComponent } from "./footer/footer.component";
 import { NavbarComponent } from "./navbar/navbar.component";
@@ -22,6 +22,7 @@ import { SidebarAnchorToggleDirective } from "./directives/sidebaranchortoggle.d
 import { SidebarToggleDirective } from "./directives/sidebartoggle.directive";
 import { RoleGuard } from "../pages/services/role.guard";
 import { RouteData } from "./sidebar/sidebar-routes.config";
+import { FormModule } from "app/forms/forms.module";
 
 @NgModule({
   exports: [
@@ -33,7 +34,7 @@ import { RouteData } from "./sidebar/sidebar-routes.config";
     NotificationSidebarComponent,
     ToggleFullscreenDirective,
     SidebarDirective,
-    NgbModule,
+
     TranslateModule
   ],
   imports: [
@@ -41,7 +42,8 @@ import { RouteData } from "./sidebar/sidebar-routes.config";
     CommonModule,
     NgbModule,
     TranslateModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    FormsModule
   ],
   declarations: [
     FooterComponent,

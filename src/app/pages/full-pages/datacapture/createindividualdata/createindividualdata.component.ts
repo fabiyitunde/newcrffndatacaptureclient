@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, Output } from "@angular/core";
 import { CreateIndividualDataService } from "./createindividualdata.service";
 import { Router, ActivatedRoute } from "@angular/router";
+import { ModalComponent } from "./modals/modal/modal.component";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-createindividualdata",
   templateUrl: "./createindividualdata.component.html",
@@ -16,11 +18,14 @@ export class CreateindividualdataComponent implements OnInit {
   statelist: any = [];
   surname: string;
   othernames: string;
-
+  closeResult: string;
+  formCompleted: boolean = false;
+  @Output() membershipnumber: number;
   constructor(
     private service: CreateIndividualDataService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private modalService: NgbModal
   ) {}
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -70,7 +75,8 @@ export class CreateindividualdataComponent implements OnInit {
     this.service.saverecord(this.data).subscribe(
       result => {
         alert("Record Created SuccessFully");
-        this.back();
+        alert("Please Upload an Image");
+        this.formCompleted = true;
       },
       err => {
         alert(err);
@@ -79,5 +85,37 @@ export class CreateindividualdataComponent implements OnInit {
   }
   back() {
     this.router.navigate(["pages/individualissuedcertificatelist"]);
+  }
+
+  showSmallModal() {
+    let membershipnumber = this.item.membershipnumber;
+    const activeModal = this.modalService.open(ModalComponent, {
+      ariaLabelledBy: "modal-basic-title"
+    });
+    (<ModalComponent>(
+      activeModal.componentInstance
+    )).membershipnumber = membershipnumber;
+
+    this.membershipnumber = membershipnumber;
+    console.log(membershipnumber);
+    activeModal.componentInstance.modalHeader = "Upload Image";
+
+    activeModal.result
+      .then(result => {
+        // this.getstafflist();
+      })
+      .catch(result => {
+        console.log(result);
+      });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return "by pressing ESC";
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return "by clicking on a backdrop";
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

@@ -1,0 +1,54 @@
+<div _ngcontent-mwd-c29="" class="col-md-12 col-lg-12">
+  <div _ngcontent-mwd-c29="" class="card">
+    <div _ngcontent-mwd-c29="" class="card-header">
+      <h5 _ngcontent-mwd-c29="" class="card-title">
+        Create Corporate Practitioner
+      </h5>
+      <p _ngcontent-mwd-c29=""></p>
+    </div>
+    <div _ngcontent-mwd-c29="" class="card-content">
+      <div _ngcontent-mwd-c29="" class="card-body">
+        <div class="card-content">
+          <div class="card-body col-md-8">
+            <form (ngSubmit)="submit()">
+              <div class="input-group row">
+                <label class="col-md-4">Membership Number</label>
+                <input
+                  [(ngModel)]="data.membershipnumber"
+                  class="form-control col-md-6"
+                  value="data.membershipnumber "
+                  type="text"
+                  name="membershipnumber"
+                />
+              </div>
+              <div class="input-group row">
+                <label class="col-md-4">Company Name</label>
+                <input
+                  name="companyname"
+                  [(ngModel)]="data.companyname"
+                  value="data.companyname"
+                  class="form-control col-md-6"
+                  type="text"
+                />
+              </div>
+
+              <button
+                (click)="back()"
+                class="btn btn-raised btn-primary white shadow-z-1-hover"
+              >
+                Back
+              </button>
+
+              <button
+                type="submit"
+                class="btn btn-raised gradient-purple-bliss white shadow-z-1-hover float-right"
+              >
+                Save
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

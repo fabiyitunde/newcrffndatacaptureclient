@@ -13,6 +13,7 @@ export class CreateindividualdataComponent implements OnInit {
   recordid: any;
   data: any = {};
   item: any = {};
+  photoItem: any = {};
   category: any = {};
   lgalist: any = [];
   statelist: any = [];
@@ -42,20 +43,19 @@ export class CreateindividualdataComponent implements OnInit {
           this.surname = this.item.name.split(" ").slice(0, 1);
           this.othernames = this.item.name.split(" ").slice(1, 3);
           this.category = obj.category;
+          this.membershipnumber = obj.membershipnumber;
+          console.log(obj);
+          this.service
+            .getfreightforwardersdetail(this.membershipnumber)
+            .subscribe(result => {
+              console.log(result);
+              this.photoItem = result;
+            });
           return obj;
         }
       });
-      console.log(this.item);
-      // result.filter(obj => {
-      //   obj._id === this.recordid;
-      //   console.log(obj._id);
-      //   this.item = obj;
-      //   this.surname = this.item.name.split(" ").slice(0, 1);
-      //   this.othernames = this.item.name.split(" ").slice(1, 3);
-      //   this.category = obj.category;
-      //   return obj;
-      // });
     });
+
     this.service.getstatelist().subscribe(result => {
       this.statelist = result;
     });

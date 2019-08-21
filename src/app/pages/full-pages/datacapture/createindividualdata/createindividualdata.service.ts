@@ -12,10 +12,10 @@ import { environment } from "environments/environment";
 export class CreateIndividualDataService {
   constructor(private http: HttpClient) {}
 
-  getfreightforwardersdetail(id: any) {
+  getfreightforwardersdetail(membershipnumber: any) {
     const url = `${
       environment.webapibaseurl
-    }individual/getIndividualDataById/${id}`;
+    }individual/getIndividualDataByMembershipNumber/${membershipnumber}`;
     return this.http
       .get(url)
       .map((response: any) => response)

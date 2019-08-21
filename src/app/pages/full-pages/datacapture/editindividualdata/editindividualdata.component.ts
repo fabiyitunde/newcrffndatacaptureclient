@@ -35,6 +35,7 @@ export class EditindividualdataComponent implements OnInit {
 
     this.service.getindividualdatabyid(this.recordid).subscribe(result => {
       this.item = result;
+      console.log(this.item);
       this.category = result.category;
     });
     this.service.getstatelist().subscribe(result => {

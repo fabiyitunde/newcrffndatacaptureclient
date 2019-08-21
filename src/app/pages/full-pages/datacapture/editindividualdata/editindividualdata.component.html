@@ -31,6 +31,18 @@
               </ul>
             </div>
             <div class="col-md-4">
+              <img
+                width="200px"
+                height="200px"
+                [hidden]="item.passportphotograph === ''"
+                src="{{ item.passportphotograph }}"
+              />
+              <img
+                width="200px"
+                height="200px"
+                src="/src/assets/img/Portrait_Placeholder.png"
+                [hidden]="item.passportphotograph != ''"
+              />
               <div _ngcontent-abm-c7="" class="mb-3">
                 <a
                   _ngcontent-abm-c7=""

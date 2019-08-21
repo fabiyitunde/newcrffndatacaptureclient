@@ -26,7 +26,20 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <img
+                width="200px"
+                height="200px"
+                [hidden]="photoItem.passportphotograph === ''"
+                src="{{ photoItem.passportphotograph }}"
+              />
+              <img
+                width="200px"
+                height="200px"
+                src="/src/assets/img/Portrait_Placeholder.png"
+                [hidden]="photoItem.passportphotograph != ''"
+              />
+            </div>
           </div>
           <div
             class="media-body  gredient-blackberry"

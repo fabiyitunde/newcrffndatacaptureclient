@@ -29,6 +29,7 @@ import { EditcorporatedataComponent } from "./datacapture/editcorporatedata/edit
 import { EditindividualdataComponent } from "./datacapture/editindividualdata/editindividualdata.component";
 import { CorporateissuedcertificatelistComponent } from "./corporateissuedcertificatelist/corporateissuedcertificatelist.component";
 import { IndividualissuedcertificatelistComponent } from "./individualissuedcertificatelist/individualissuedcertificatelist.component";
+import { UploadIndividualPassportPhotoComponent } from "./datacapture/uploadindividualpassportphoto/uploadindividualpassportphoto.component";
 
 import { CreateindividualComponent } from "./createindividual/createindividual.component";
 import { CreatecorporateComponent } from "./createcorporate/createcorporate.component";
@@ -141,6 +142,13 @@ const routes: Routes = [
         component: SubmitindividualdataComponent,
         data: {
           title: "Submit Individual Data Page"
+        }
+      },
+      {
+        path: "uploadindividualpassportphoto/:id",
+        component: UploadIndividualPassportPhotoComponent,
+        data: {
+          title: "Upload Individual Data Page"
         }
       },
       {

@@ -147,10 +147,12 @@ export class ModalComponent {
   onSubmit() {
     this.spinner = true;
     this.uploadInProgress = true;
-
+    //var strImage =  + this.webcamImage.imageAsBase64;
     this.data.membershipnumber = this.membershipnumber;
     this.data.passportphotograph =
-      this.passportbase64 || this.webcamImage.imageAsBase64;
+      this.passportbase64 ||
+      "data:image/jpg;base64," + this.webcamImage.imageAsBase64;
+    console.log(this.data.passportphotograph);
     this.service.saveUploadedPassportPhoto(this.data).subscribe(
       result => {
         //this.imageUrl = "assets/img/Portrait_Placeholder.png";

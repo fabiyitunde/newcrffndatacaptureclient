@@ -68,7 +68,7 @@ export class EditindividualdataComponent implements OnInit {
 
     activeModal.result
       .then(result => {
-        // this.getstafflist();
+        this.ngOnInit();
       })
       .catch(result => {
         console.log(result);

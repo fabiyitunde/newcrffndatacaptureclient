@@ -60,6 +60,12 @@ export class CreateindividualdataComponent implements OnInit {
       this.statelist = result;
     });
   }
+  getImage() {
+    this.service
+      .getfreightforwardersdetail(this.recordid)
+      .subscribe(result => {});
+  }
+
   onChangeEvent(ev) {
     this.service.getlgalist(ev.target.value).subscribe(result => {
       this.lgalist = result;
@@ -97,12 +103,12 @@ export class CreateindividualdataComponent implements OnInit {
     )).membershipnumber = membershipnumber;
 
     this.membershipnumber = membershipnumber;
-    console.log(membershipnumber);
+    // console.log(membershipnumber);
     activeModal.componentInstance.modalHeader = "Upload Image";
 
     activeModal.result
       .then(result => {
-        // this.getstafflist();
+        this.ngOnInit();
       })
       .catch(result => {
         console.log(result);

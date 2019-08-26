@@ -21,6 +21,7 @@ export class CreateindividualdataComponent implements OnInit {
   othernames: string;
   closeResult: string;
   formCompleted: boolean = false;
+  imageUrl: string;
   @Output() membershipnumber: number;
   constructor(
     private service: CreateIndividualDataService,
@@ -29,6 +30,7 @@ export class CreateindividualdataComponent implements OnInit {
     private modalService: NgbModal
   ) {}
   ngOnInit() {
+    this.imageSwap();
     this.route.params.subscribe(params => {
       this.recordid = params["id"];
       this.service
@@ -44,11 +46,11 @@ export class CreateindividualdataComponent implements OnInit {
           this.othernames = this.item.name.split(" ").slice(1, 3);
           this.category = obj.category;
           this.membershipnumber = obj.membershipnumber;
-          console.log(obj);
+          // console.log(obj);
           this.service
             .getfreightforwardersdetail(this.membershipnumber)
             .subscribe(result => {
-              console.log(result);
+              // console.log(result);
               this.photoItem = result;
             });
           return obj;
@@ -59,6 +61,11 @@ export class CreateindividualdataComponent implements OnInit {
     this.service.getstatelist().subscribe(result => {
       this.statelist = result;
     });
+  }
+  imageSwap() {
+    if (this.photoItem.passportphotograph != null) {
+      this.imageUrl = this.photoItem.passportphotograph;
+    } else this.imageUrl = "assets/img/Portrait_Placeholder.png";
   }
   getImage() {
     this.service
@@ -80,8 +87,9 @@ export class CreateindividualdataComponent implements OnInit {
 
     this.service.saverecord(this.data).subscribe(
       result => {
-        alert("Record Created SuccessFully");
+        alert("Record saved");
         alert("Please Upload an Image");
+        this.ngOnInit();
         this.formCompleted = true;
       },
       err => {
@@ -103,12 +111,13 @@ export class CreateindividualdataComponent implements OnInit {
     )).membershipnumber = membershipnumber;
 
     this.membershipnumber = membershipnumber;
-    // console.log(membershipnumber);
+
     activeModal.componentInstance.modalHeader = "Upload Image";
 
     activeModal.result
       .then(result => {
         this.ngOnInit();
+        alert("Record Created SuccessFully Return To List");
       })
       .catch(result => {
         console.log(result);

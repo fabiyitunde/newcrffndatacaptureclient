@@ -31,12 +31,12 @@
                 width="200px"
                 height="200px"
                 [hidden]="photoItem.passportphotograph === ''"
-                src="{{ photoItem.passportphotograph }}"
+                src="{{ imageUrl }}"
               />
               <img
                 width="200px"
                 height="200px"
-                src="/src/assets/img/Portrait_Placeholder.png"
+                src="imageUrl"
                 [hidden]="photoItem.passportphotograph != ''"
               />
             </div>
@@ -196,14 +196,8 @@
             </button>
           </div>
           <div class="row">
-            <div
-              _ngcontent-abm-c7=""
-              style="float: right"
-              class="mb-3"
-              *ngIf="formCompleted"
-            >
+            <div style="float: right" class="mb-3" *ngIf="formCompleted">
               <a
-                _ngcontent-abm-c7=""
                 class="btn btn-raised gradient-mint white shadow-z-4"
                 (click)="showSmallModal()"
                 >Upload Image</a

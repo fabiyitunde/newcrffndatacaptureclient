@@ -20,6 +20,7 @@ export class EditindividualdataComponent implements OnInit {
   lgalist: any = [];
   surname: string;
   othernames: string;
+  imageUrl: string = "assets/img/Portrait_Placeholder.png";
   @Output() membershipnumber: number;
 
   constructor(

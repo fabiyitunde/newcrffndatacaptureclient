@@ -43,7 +43,7 @@ routes = [
 
       {
         path: "/pages/unsubmittedcertificateregisterlist",
-        title: "Unsubmited List",
+        title: "Unsubmitted List",
         icon: "",
         class: "",
         badge: "",

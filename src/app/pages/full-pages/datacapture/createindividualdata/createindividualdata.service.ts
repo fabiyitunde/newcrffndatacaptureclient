@@ -60,6 +60,21 @@ export class CreateIndividualDataService {
         return throwError(errMsg);
       });
   }
+  gettitlelist() {
+    const url = `${environment.webapibaseurl}individual/getTitleList`;
+    return this.http
+      .get(url)
+      .map((response: any) => response)
+      .catch((error: any) => {
+        const body = error.error;
+        const errMsg = body.Message
+          ? body.Message
+          : error.status
+          ? `${error.status} - ${error.statusText}`
+          : "Server error";
+        return throwError(errMsg);
+      });
+  }
   getlgalist(id: any) {
     const url = `${environment.webapibaseurl}individual/getLGAList/${id}`;
     return this.http

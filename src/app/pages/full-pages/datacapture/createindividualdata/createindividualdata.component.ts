@@ -17,6 +17,7 @@ export class CreateindividualdataComponent implements OnInit {
   category: any = {};
   lgalist: any = [];
   statelist: any = [];
+  titlelist: any = [];
   surname: string;
   othernames: string;
   closeResult: string;
@@ -60,6 +61,9 @@ export class CreateindividualdataComponent implements OnInit {
 
     this.service.getstatelist().subscribe(result => {
       this.statelist = result;
+    });
+    this.service.gettitlelist().subscribe(result => {
+      this.titlelist = result;
     });
   }
   imageSwap() {
@@ -124,13 +128,13 @@ export class CreateindividualdataComponent implements OnInit {
       });
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return "by pressing ESC";
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return "by clicking on a backdrop";
-    } else {
-      return `with: ${reason}`;
-    }
-  }
+  // private getDismissReason(reason: any): string {
+  //   if (reason === ModalDismissReasons.ESC) {
+  //     return "by pressing ESC";
+  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+  //     return "by clicking on a backdrop";
+  //   } else {
+  //     return `with: ${reason}`;
+  //   }
+  // }
 }

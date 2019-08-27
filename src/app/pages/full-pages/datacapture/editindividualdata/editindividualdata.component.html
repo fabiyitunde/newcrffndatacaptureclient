@@ -59,21 +59,38 @@
           >
             <div style="padding: 40px">
               <div class="input-group row">
-                <label class="col-md-4 white">Title</label>
-
-                <select
-                  name="title"
-                  #title="ngModel"
-                  class="form-control col-md-2"
-                  id="title"
-                  [(ngModel)]="item.title"
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Title</b></label
                 >
-                  <option>Select Option</option>
-                  <option value="Mr">Mr</option>
-                  <option value="Mrs">Mrs</option>
-                  <option value="Dr">Dr</option>
-                  <option value="Chief">Chief</option>
+                <select
+                  class=" form"
+                  id="inputGroupSelect01"
+                  name="titlecode"
+                  #statecode="ngModel"
+                  [(ngModel)]="item.title"
+                  (change)="onChangeEvent($event)"
+                >
+                  <option selected>Title List...</option>
+                  <option
+                    *ngFor="let title of titlelist"
+                    value="{{ title.code }}"
+                  >
+                    {{ title.description }}</option
+                  >
                 </select>
+              </div>
+
+              <div class="input-group row">
+                <label class="col-md-4 white" style="padding-left: 15px"
+                  ><b>Date of Birth</b></label
+                ><input
+                  class="form-control ng-pristine ng-valid ng-touched col-md-5"
+                  dateofbirth=""
+                  name="dateofbirth"
+                  [(ngModel)]="item.dateofbirth"
+                  placeholder="date of birth"
+                  type="date"
+                />
               </div>
               <div class="input-group row">
                 <label class="col-md-4 white" style="padding-left: 15px"

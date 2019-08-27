@@ -15,6 +15,7 @@ export class SubmitindividualdataComponent implements OnInit {
   category: any = {};
   state: any = {};
   lga: any = {};
+  title: any = {};
 
   constructor(
     private service: SubmitIndividualDataService,
@@ -28,6 +29,8 @@ export class SubmitindividualdataComponent implements OnInit {
       this.service.getindividualdata(this.recordid).subscribe(result => {
         this.item = result;
         this.category = this.item.category;
+        this.title = this.item.title;
+
         this.state = this.item.state;
         this.lga = this.item.lga;
         console.log(this.item);

@@ -13,6 +13,7 @@ export class EditindividualdataComponent implements OnInit {
   recordid: any;
   data: any = {};
   item: any = {};
+  titlelist: any = [];
 
   category: any = {};
   stateObject: any = {};
@@ -41,6 +42,9 @@ export class EditindividualdataComponent implements OnInit {
     });
     this.service.getstatelist().subscribe(result => {
       this.statelist = result;
+    });
+    this.service.gettitlelist().subscribe(result => {
+      this.titlelist = result;
     });
   }
   checkOperation() {

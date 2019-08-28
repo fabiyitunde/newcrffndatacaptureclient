@@ -16,59 +16,72 @@
           >
         </div>
       </div>
-      <div class="col-md-8">
-        <ul _ngcontent-c8="" class="list-group">
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ title.description }}</p>
-            <b>Title</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ item.surname }}</p>
-            <b>Surname</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ item.othernames }}</p>
-            <b>Other Names</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ item.dateofbirth }}</p>
-            <b>Date Of Birth</b>
-          </li>
+      <div class="row">
+        <div class="col-md-8">
+          <ul _ngcontent-c8="" class="list-group">
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ title.description }}</p>
+              <b>Title</b>
+            </li>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ item.surname }}</p>
+              <b>Surname</b>
+            </li>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ item.othernames }}</p>
+              <b>Other Names</b>
+            </li>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ DOB }}</p>
+              <b>Date Of Birth</b>
+            </li>
 
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ item.membershipnumber }}</p>
-            <b>Membership Number</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ state.description }}</p>
-            <b>State</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ lga.description }}</p>
-            <b>Local Governemnt</b>
-          </li>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ item.membershipnumber }}</p>
+              <b>Membership Number</b>
+            </li>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ state.description }}</p>
+              <b>State</b>
+            </li>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ lga.description }}</p>
+              <b>Local Governemnt</b>
+            </li>
 
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ category.description }}</p>
-            <b>Category</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ state.description }}</p>
-            <b>State</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ item.idcardnumber }}</p>
-            <b>Identification Number</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ item.email }}</p>
-            <b>Email</b>
-          </li>
-          <li _ngcontent-c8="" class="list-group-item text-left">
-            <p class="float-right ">{{ item.address }}</p>
-            <b>Address</b>
-          </li>
-        </ul>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ category.description }}</p>
+              <b>Category</b>
+            </li>
+
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ item.idcardnumber }}</p>
+              <b>Identification Number</b>
+            </li>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ item.email }}</p>
+              <b>Email</b>
+            </li>
+            <li _ngcontent-c8="" class="list-group-item text-left">
+              <p class="float-right ">{{ item.address }}</p>
+              <b>Address</b>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <img
+            width="200px"
+            height="200px"
+            [hidden]="item.passportphotograph === ''"
+            src="{{ item.passportphotograph }}"
+          />
+          <img
+            width="200px"
+            height="200px"
+            src="imageUrl"
+            [hidden]="item.passportphotograph != ''"
+          />
+        </div>
       </div>
       <div _ngcontent-c8="" class="card-body">
         <Button

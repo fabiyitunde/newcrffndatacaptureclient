@@ -15,7 +15,9 @@ export class SubmitindividualdataComponent implements OnInit {
   category: any = {};
   state: any = {};
   lga: any = {};
+  DOB: string;
   title: any = {};
+  imageUrl: string;
 
   constructor(
     private service: SubmitIndividualDataService,
@@ -30,14 +32,24 @@ export class SubmitindividualdataComponent implements OnInit {
         this.item = result;
         this.category = this.item.category;
         this.title = this.item.title;
+        this.DOB = this.item.dateofbirth
+          .slice(0, 10)
+          .split("-")
+          .reverse()
+          .join("-");
 
         this.state = this.item.state;
         this.lga = this.item.lga;
         console.log(this.item);
       });
+      this.imageSwap();
     });
   }
-
+  imageSwap() {
+    if (this.item.passportphotograph != null) {
+      this.imageUrl = this.item.passportphotograph;
+    } else this.imageUrl = "assets/img/Portrait_Placeholder.png";
+  }
   submit() {
     if (window.confirm("Are you sure you want to Submit?")) {
       this.data.userid = JSON.parse(localStorage.getItem("userinfo")).user.id;

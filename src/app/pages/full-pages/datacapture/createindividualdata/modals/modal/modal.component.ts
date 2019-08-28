@@ -138,6 +138,7 @@ export class ModalComponent {
       console.warn("Camera access was not allowed by user!");
     }
   }
+
   public get triggerObservable(): Observable<void> {
     return this.trigger.asObservable();
   }

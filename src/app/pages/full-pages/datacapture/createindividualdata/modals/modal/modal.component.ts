@@ -130,7 +130,14 @@ export class ModalComponent {
     console.log("active device: " + deviceId);
     this.deviceId = deviceId;
   }
-
+  public handleInitError(error: WebcamInitError): void {
+    if (
+      error.mediaStreamError &&
+      error.mediaStreamError.name === "NotAllowedError"
+    ) {
+      console.warn("Camera access was not allowed by user!");
+    }
+  }
   public get triggerObservable(): Observable<void> {
     return this.trigger.asObservable();
   }

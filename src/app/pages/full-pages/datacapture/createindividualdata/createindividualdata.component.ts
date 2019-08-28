@@ -58,7 +58,7 @@ export class CreateindividualdataComponent implements OnInit {
         }
       });
     });
-
+    this.getImage();
     this.service.getstatelist().subscribe(result => {
       this.statelist = result;
     });

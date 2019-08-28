@@ -14,6 +14,9 @@ export class ApproveindividualdataComponent implements OnInit {
   category: any = {};
   state: any = {};
   lga: any = {};
+  DOB: string;
+  title: any = {};
+  imageUrl: string;
 
   constructor(
     private service: ApproveIndividualDataService,
@@ -29,9 +32,22 @@ export class ApproveindividualdataComponent implements OnInit {
         this.category = this.item.category;
         this.state = this.item.state;
         this.lga = result.lga;
+        this.title = this.item.title;
+        this.DOB = this.item.dateofbirth
+          .slice(0, 10)
+          .split("-")
+          .reverse()
+          .join("-");
+
         console.log(this.item);
       });
     });
+    this.imageSwap();
+  }
+  imageSwap() {
+    if (this.item.passportphotograph != null) {
+      this.imageUrl = this.item.passportphotograph;
+    } else this.imageUrl = "assets/img/Portrait_Placeholder.png";
   }
   return() {
     if (window.confirm("Are you sure you want to return this Record?")) {

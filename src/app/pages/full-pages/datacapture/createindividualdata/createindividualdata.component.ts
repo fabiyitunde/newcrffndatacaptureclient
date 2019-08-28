@@ -98,6 +98,8 @@ export class CreateindividualdataComponent implements OnInit {
       },
       err => {
         alert(err);
+        this.ngOnInit();
+        this.formCompleted = true;
       }
     );
   }

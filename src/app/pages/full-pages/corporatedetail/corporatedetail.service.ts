@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 //import "rxjs/add/observable/throw";
-import { Observable } from "rxjs/observable";
+import { throwError } from "rxjs";
 import {
   Http,
   Headers,
@@ -32,7 +32,7 @@ export class CorporatedetailService {
           : error.status
           ? `${error.status} - ${error.statusText}`
           : "Server error";
-        return Observable.throw(errMsg);
+        return throwError(errMsg);
       });
   }
   saverecord(model: any) {
@@ -49,7 +49,7 @@ export class CorporatedetailService {
           : error.status
           ? `${error.status} - ${error.statusText}`
           : "Server error";
-        return Observable.throw(body);
+        return throwError(body);
       });
   }
 }

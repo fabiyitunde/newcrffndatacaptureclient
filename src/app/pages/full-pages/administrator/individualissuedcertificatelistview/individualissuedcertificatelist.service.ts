@@ -3,9 +3,9 @@ import { HttpClient } from "@angular/common/http";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import "rxjs/add/observable/throw";
-import { Observable } from "rxjs/observable";
 
 import { environment } from "environments/environment";
+import { throwError } from "rxjs";
 
 @Injectable()
 export class IndividualIssuedCertificateListService {
@@ -25,7 +25,7 @@ export class IndividualIssuedCertificateListService {
           : error.status
           ? `${error.status} - ${error.statusText}`
           : "Server error";
-        return Observable.throw(errMsg);
+        return throwError(errMsg);
       });
   }
 }

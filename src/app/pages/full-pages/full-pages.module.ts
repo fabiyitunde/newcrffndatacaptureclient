@@ -47,6 +47,7 @@ import { IndividualissuedcertificatelistComponent } from "./individualissuedcert
 import { CreateindividualComponent } from "./createindividual/createindividual.component";
 import { CreatecorporateComponent } from "./createcorporate/createcorporate.component";
 import { ModalComponent } from "./datacapture/createindividualdata/modals/modal/modal.component";
+import { ModalsComponent } from "./datacapture/createindividualdata/modals/modals.component";
 import { SpinnerComponent } from "./spinner/spinner.component";
 import { WebcamModule } from "ngx-webcam";
 const PAGES_COMPONENTS = [FullPagesComponent];
@@ -66,6 +67,8 @@ const PAGES_COMPONENTS = [FullPagesComponent];
   ],
   declarations: [
     ...PAGES_COMPONENTS,
+    ModalComponent,
+    ModalsComponent,
     GalleryPageComponent,
     InvoicePageComponent,
     HorizontalTimelinePageComponent,

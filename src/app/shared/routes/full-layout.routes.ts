@@ -3,7 +3,8 @@ import { AdministratorModule } from "../../pages/full-pages/administrator/admini
 import { FullPagesModule } from "../../pages/full-pages/full-pages.module";
 import { RoleGuard } from "../../pages/services/role.guard";
 //Route for content layout with sidebar, navbar and footer.
-
+export const fullpages = () => FullPagesModule;
+export const adminpages = () => AdministratorModule;
 export const Full_ROUTES: Routes = [
   {
     path: "dashboard",
@@ -41,13 +42,14 @@ export const Full_ROUTES: Routes = [
     path: "components",
     loadChildren: "./components/ui-components.module#UIComponentsModule"
   },
+
   {
     path: "pages",
-    loadChildren: () => FullPagesModule
+    loadChildren: fullpages
   },
   {
     path: "administrator",
-    loadChildren: () => AdministratorModule,
+    loadChildren: adminpages,
     canActivate: [RoleGuard],
     data: { role: "Administrator" }
   },

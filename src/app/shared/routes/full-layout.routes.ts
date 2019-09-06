@@ -1,9 +1,11 @@
 import { Routes, RouterModule } from "@angular/router";
 import { AdministratorModule } from "../../pages/full-pages/administrator/administrator.module";
 import { FullPagesModule } from "../../pages/full-pages/full-pages.module";
+
 import { RoleGuard } from "../../pages/services/role.guard";
 //Route for content layout with sidebar, navbar and footer.
 export const fullpages = () => FullPagesModule;
+
 export const adminpages = () => AdministratorModule;
 export const Full_ROUTES: Routes = [
   {
@@ -45,11 +47,12 @@ export const Full_ROUTES: Routes = [
 
   {
     path: "pages",
-    loadChildren: fullpages
+    loadChildren: "../../pages/full-pages/full-pages.module#FullPagesModule"
   },
   {
     path: "administrator",
-    loadChildren: adminpages,
+    loadChildren:
+      "../../pages/full-pages/administrator/administrator.module#AdministratorModule",
     canActivate: [RoleGuard],
     data: { role: "Administrator" }
   },
